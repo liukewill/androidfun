@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+//wrap with try and catch so the build is working even if the signing stuff is missing
+try {
+    apply from: '../../../signing.gradle'
+} catch (ex) {
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+    defaultConfig {
+        applicationId 'com.mikepenz.lollipopshowcase.sample'
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 241
+        versionName "2.4.1"
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-DEBUG"
+            try {
+                signingConfig signingConfigs.debug
+            } catch (ex) {
+            }
+            minifyEnabled false
+        }
+        release {
+            try {
+                signingConfig signingConfigs.release
+            } catch (ex) {
+            }
+            zipAlignEnabled true
+            minifyEnabled false
+        }
+
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def outputFile = output.outputFile
+                if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                    def fileName = outputFile.name.replace(".apk", "-v" + defaultConfig.versionName + "-c" + defaultConfig.versionCode + ".apk")
+                    output.outputFile = new File(outputFile.parent, fileName)
+                }
+            }
+        }
+    }
+    productFlavors {
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile "com.android.support:appcompat-v7:23.1.1"
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:cardview-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+
+    compile('com.mikepenz:aboutlibraries:5.3.4@aar') {
+        transitive = true
+    }
+    compile('com.mikepenz:materialdrawer:4.5.9@aar') {
+        transitive = true
+    }
+    compile 'com.mikepenz:iconics-core:2.5.1@aar'
+    compile 'com.mikepenz:google-material-typeface:2.1.0.1.original@aar'
+    compile 'com.mikepenz:fontawesome-typeface:4.5.0.1@aar'
+
+    compile 'com.facebook.rebound:rebound:0.3.8'
+}

@@ -1,0 +1,78 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:transitionName="actionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/activity_detail_vertical_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/row_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/row_name"
+                    layout="@layout/row_detailiconview" />
+
+                <include
+                    android:id="@+id/row_package_name"
+                    layout="@layout/row_detailview" />
+
+                <include
+                    android:id="@+id/row_activity"
+                    layout="@layout/row_detailview" />
+
+                <include
+                    android:id="@+id/row_component_info"
+                    layout="@layout/row_detailview" />
+
+                <include
+                    android:id="@+id/row_version"
+                    layout="@layout/row_detailview" />
+
+                <include
+                    android:id="@+id/row_moments"
+                    layout="@layout/row_detailview" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:elevation="8dp"
+        android:stateListAnimator="@anim/fab_anim"
+        android:transitionName="fab"
+        app:fabSize="normal" />
+</android.support.design.widget.CoordinatorLayout>

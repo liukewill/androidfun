@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg_blue"
+    android:orientation="vertical">
+
+    <lecho.lib.hellocharts.view.ColumnChartView
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="-20dp">
+    </lecho.lib.hellocharts.view.ColumnChartView>
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/tv_1"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/chart_text_bg_select"
+                android:textColor="@drawable/chart_text_select"
+                android:gravity="center"
+                android:text="ONE"/>
+
+            <Button
+                android:id="@+id/tv_2"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/chart_text_bg_select"
+                android:textColor="@drawable/chart_text_select"
+                android:gravity="center"
+                android:text="ONE"/>
+            <Button
+                android:id="@+id/tv_3"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/chart_text_bg_select"
+                android:textColor="@drawable/chart_text_select"
+                android:gravity="center"
+                android:text="ONE"/>
+            <Button
+                android:id="@+id/tv_4"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/chart_text_bg_select"
+                android:textColor="@drawable/chart_text_select"
+                android:gravity="center"
+                android:text="ONE"/>
+            <Button
+                android:id="@+id/tv_5"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/chart_text_bg_select"
+                android:textColor="@drawable/chart_text_select"
+                android:gravity="center"
+                android:text="ONE"/>
+            <Button
+                android:id="@+id/tv_6"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/chart_text_bg_select"
+                android:textColor="@drawable/chart_text_select"
+                android:gravity="center"
+                android:text="ONE"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>

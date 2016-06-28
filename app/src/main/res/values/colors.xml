@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+
+
+
+        <!--UI切图中颜色-->
+        <color name="main_balck">#21292B</color><!--主黑色-->
+        <color name="main_bg_blue">#325c7c</color><!--蓝色背景-->
+
+
+        <!--UI切图字色-->
+        <color name="main_text_grey">#b0b0b0</color><!--底部灰色字色-->
+        <color name="main_text_blue">#00b4f7</color><!--底部灰色字色-->
+
+        <color name="bd_bg_white">#ffffff</color>
+        <color name="bd_bg_blue">#65caff</color>
+        <!-- common start -->
+        <color name="com_bg_grey">#f5f5f5</color><!--灰色 主背景-->
+        <color name="com_bg_bar">#fff8e8</color><!--灰色 bar背景-->
+
+        <color name="font_color_main_n">#333333</color><!--黑色 字体-->
+        <color name="font_color_main_m">#999999</color><!--深灰 字体-->
+        <color name="font_color_main_d">#cccccc</color><!--浅灰 字体-->
+        <color name="font_color_edit_hint">#a6a6a6</color>
+        <color name="font_color_white">#ffffff</color>
+        <color name="font_color_ts">#b1cade</color> <!-- 技术支持字体颜色-->
+        <color name="font_color_pollution">#b1c6d6</color> <!-- 实时监控污染物数值字体颜色-->
+
+        <color name="divider">#d3d3d3</color><!--分割线-->
+        <color name="white">#ffffff</color><!--纯白-->
+        <color name="transparent">#00000000</color>
+
+        <color name="blue">#228fea</color>
+        <color name="blue_light">#218ee9</color>
+        <color name="blue_dark">#ff0099cc</color>
+
+        <color name="realtime_bar_grey">#adc5f1</color>
+        <color name="level_1">#00E400</color>
+        <color name="level_1_t">#7f00E400</color>
+
+        <color name="level_2">#FFFF00</color>
+        <color name="level_2_t">#7fFFFF00</color>
+
+        <color name="level_3">#FF7E00</color>
+        <color name="level_3_t">#7fFF7E00</color>
+
+        <color name="level_4">#FF0000</color>
+        <color name="level_4_t">#7fFF0000</color>
+
+        <color name="level_5">#99004C</color>
+        <color name="level_5_t">#7f99004C</color>
+
+        <color name="level_6">#7E0023</color>
+        <color name="level_6_t">#7f7E0023</color>
+        <!-- #00E400，#FFFF00，#FF7E00，#FF0000，#99004C，#7E0023-->
+
+    <color name="purple50">#f3e5f5</color>
+    <color name="purple100">#e1bee7</color>
+    <color name="purple200">#ce93d8</color>
+    <color name="purple300">#ba68c8</color>
+    <color name="purple400">#ab47bc</color>
+    <color name="purple500">#9c27b0</color>
+    <color name="purple600">#8e24aa</color>
+    <color name="purple700">#7b1fa2</color>
+    <color name="purple800">#6a1b9a</color>
+    <color name="purple900">#4a148c</color>
+    <color name="purplea100">#ea80fc</color>
+    <color name="purplea200">#e040fb</color>
+    <color name="purplea400">#d500f9</color>
+    <color name="purplea700">#aa00ff</color>
+
+    <color name="blue50">#e7e9fd</color>
+    <color name="blue100">#d0d9ff</color>
+    <color name="blue200">#afbfff</color>
+    <color name="blue300">#91a7ff</color>
+    <color name="blue400">#738ffe</color>
+    <color name="blue500">#5677fc</color>
+    <color name="blue600">#4e6cef</color>
+    <color name="blue700">#455ede</color>
+    <color name="blue800">#3b50ce</color>
+    <color name="blue900">#2a36b1</color>
+    <color name="bluea100">#a6baff</color>
+    <color name="bluea200">#6889ff</color>
+    <color name="bluea400">#4d73ff</color>
+    <color name="bluea700">#4d69ff</color>
+</resources>
