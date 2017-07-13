@@ -11,15 +11,15 @@ import android.widget.ScrollView;
  */
 public class VerticalScrollview extends ScrollView {
 
-    private float xdistance,ydistance;
+    private float xdistance, ydistance;
 
-    private float xLast,yLast;
+    private float xLast, yLast;
 
-    private int move =0;
+    private int move = 0;
 
-    private int up =0;
+    private int up = 0;
 
-    private int down=0;
+    private int down = 0;
 
 
     public VerticalScrollview(Context context) {
@@ -32,36 +32,61 @@ public class VerticalScrollview extends ScrollView {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        switch (ev.getAction()){
+//        switch (ev.getAction()){
+//            case MotionEvent.ACTION_DOWN:
+//                Log.i("FUN","第  "+ down +" 次触发--------DOWN--------");
+//                move =0;
+//                xdistance=ydistance=0;//清零
+//                xLast=ev.getX();
+//                xLast=ev.getY();
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//                Log.i("FUN","第  "+ move +" 次触发MOVE");
+//                move++;
+//                final float curX=ev.getX();
+//                final float curY=ev.getY();
+//
+//                xdistance +=Math.abs(curX-xLast);
+//                ydistance +=Math.abs(curY-yLast);
+//                xLast=curX;
+//                yLast=curY;
+//                if(xdistance>ydistance)//X轴距离滑动大于Y轴距离，scrollview 不拦截事件
+//                {
+//                    Log.i("FUN","viewpager拦截");
+//                    return false;
+//                }else{
+//                    Log.i("FUN","scrollview拦截");
+//                }
+//                break;
+//            case MotionEvent.ACTION_UP:
+//                Log.i("FUN","第  "+ up +" 次触发--------UP--------");
+//                break;
+//        }
+//        Log.i("FUN","scrollview------INTERCEPT"+super.onInterceptTouchEvent(ev));
+//        return super.onInterceptTouchEvent(ev);
+//    }
+        switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Log.i("FUN","第  "+ down +" 次触发--------DOWN--------");
-                move =0;
-                xdistance=ydistance=0;//清零
-                xLast=ev.getX();
-                xLast=ev.getY();
+                Log.i("FUN", "*****************************");
+
+                Log.i("FUN", "SC--IT-ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-                Log.i("FUN","第  "+ move +" 次触发MOVE");
-                move++;
-                final float curX=ev.getX();
-                final float curY=ev.getY();
-
-                xdistance +=Math.abs(curX-xLast);
-                ydistance +=Math.abs(curY-yLast);
-                xLast=curX;
-                yLast=curY;
-                if(xdistance>ydistance)//X轴距离滑动大于Y轴距离，scrollview 不拦截事件
-                {
-                    Log.i("FUN","viewpager拦截");
-                    return false;
-                }else{
-                    Log.i("FUN","scrollview拦截");
-                }
+                Log.i("FUN", "*****************************");
+                Log.i("FUN", "SC--IT---ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
-                Log.i("FUN","第  "+ up +" 次触发--------UP--------");
+                Log.i("FUN", "*****************************");
+                Log.i("FUN", "SC--IT---ACTION_UP");
                 break;
         }
+        Log.i("FUN", "SC--IT---"+super.onInterceptTouchEvent(ev));
         return super.onInterceptTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        Log.i("FUN", "SC--ONTOUCHEVENT---"+super.onInterceptTouchEvent(ev));
+        return super.onTouchEvent(ev);
     }
 }

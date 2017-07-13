@@ -5,23 +5,18 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-2.10-all/gradle-2.10" />
+        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-3.3" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/lollipop" />
-            <option value="$PROJECT_DIR$/zhy_horizontalScrollView03_recyclerView" />
+            <option value="$PROJECT_DIR$/inject" />
+            <option value="$PROJECT_DIR$/inject-api" />
+            <option value="$PROJECT_DIR$/inject-compiler" />
+            <option value="$PROJECT_DIR$/lib" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/lollipop" />
-            <option value="$PROJECT_DIR$/zhy_horizontalScrollView03_recyclerView" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

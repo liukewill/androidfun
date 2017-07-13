@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\build\\intermediates\\res\\merged\\debug\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
+        "outputFile": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/build/intermediates/res/merged/debug/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,31 @@
                     "endOffset": 109
                 },
                 "from": {
-                    "file": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values-sw720dp-land\\dimens.xml",
+                    "file": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/src/main/res/values-sw720dp-land/dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 200,
+                        "endColumn": 58,
+                        "endOffset": 254
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\build\\intermediates\\res\\merged\\debug\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 58,
+                    "endOffset": 109
+                },
+                "from": {
+                    "file": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values-sw720dp-land\\dimens.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,

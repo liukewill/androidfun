@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+        "outputFile": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/build/intermediates/res/merged/debug/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,149 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\dimens.xml",
+                    "file": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/src/main/res/values/dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 89,
+                        "endColumn": 57,
+                        "endOffset": 142
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 113,
+                    "endColumn": 55,
+                    "endOffset": 164
+                },
+                "from": {
+                    "file": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/src/main/res/values/dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 147,
+                        "endColumn": 55,
+                        "endOffset": 198
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 169,
+                    "endColumn": 52,
+                    "endOffset": 217
+                },
+                "from": {
+                    "file": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 118,
+                        "endColumn": 52,
+                        "endOffset": 166
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 222,
+                    "endColumn": 61,
+                    "endOffset": 279
+                },
+                "from": {
+                    "file": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 61,
+                        "endOffset": 113
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 284,
+                    "endColumn": 52,
+                    "endOffset": 332
+                },
+                "from": {
+                    "file": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 171,
+                        "endColumn": 52,
+                        "endOffset": 219
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 337,
+                    "endLine": 13,
+                    "endColumn": 12,
+                    "endOffset": 623
+                },
+                "from": {
+                    "file": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 186,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 472
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 628,
+                    "endLine": 16,
+                    "endColumn": 12,
+                    "endOffset": 783
+                },
+                "from": {
+                    "file": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 510,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 665
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\dimens.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -30,7 +172,7 @@
                     "endOffset": 164
                 },
                 "from": {
-                    "file": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\dimens.xml",
+                    "file": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -49,7 +191,7 @@
                     "endOffset": 217
                 },
                 "from": {
-                    "file": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\strings.xml",
+                    "file": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +210,7 @@
                     "endOffset": 279
                 },
                 "from": {
-                    "file": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\strings.xml",
+                    "file": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -87,7 +229,7 @@
                     "endOffset": 332
                 },
                 "from": {
-                    "file": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\strings.xml",
+                    "file": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -107,7 +249,7 @@
                     "endOffset": 623
                 },
                 "from": {
-                    "file": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\styles.xml",
+                    "file": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -128,7 +270,7 @@
                     "endOffset": 783
                 },
                 "from": {
-                    "file": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\styles.xml",
+                    "file": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,

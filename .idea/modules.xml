@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidFun.iml" filepath="$PROJECT_DIR$/AndroidFun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidfun.iml" filepath="$PROJECT_DIR$/androidfun.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lollipop/lollipop.iml" filepath="$PROJECT_DIR$/lollipop/lollipop.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zhy_horizontalScrollView03_recyclerView/zhy_horizontalScrollView03_recyclerView.iml" filepath="$PROJECT_DIR$/zhy_horizontalScrollView03_recyclerView/zhy_horizontalScrollView03_recyclerView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inject/inject.iml" filepath="$PROJECT_DIR$/inject/inject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inject-api/inject-api.iml" filepath="$PROJECT_DIR$/inject-api/inject-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inject-compiler/inject-compiler.iml" filepath="$PROJECT_DIR$/inject-compiler/inject-compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />
     </modules>
   </component>
 </project>

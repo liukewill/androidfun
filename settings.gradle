@@ -1,3 +1,2 @@
-include ':app', 'lollipop'
-//include ':glide'
-include ':zhy_horizontalScrollView03_recyclerView'
+include ':app', ':lib', ':inject-compiler', ':inject', ':inject-api'
+

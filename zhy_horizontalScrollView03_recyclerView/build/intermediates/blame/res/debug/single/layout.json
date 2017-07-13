@@ -1,10 +1,18 @@
 [
     {
-        "merged": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\build\\intermediates\\res\\merged\\debug\\layout\\activity_index_gallery_item.xml",
-        "source": "C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\layout\\activity_index_gallery_item.xml"
+        "merged": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/build/intermediates/res/merged/debug/layout/activity_index_gallery_item.xml",
+        "source": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/src/main/res/layout/activity_index_gallery_item.xml"
+    },
+    {
+        "merged": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\build\\intermediates\\res\\merged\\debug\\layout\\activity_index_gallery_item.xml",
+        "source": "/Users/kenan/Desktop/androidfun/C:\\Users\\think\\Desktop\\AndroidFun\\zhy_horizontalScrollView03_recyclerView\\src\\main\\res\\layout\\activity_index_gallery_item.xml"
+    },
+    {
+        "merged": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/Users/kenan/Desktop/androidfun/zhy_horizontalScrollView03_recyclerView/src/main/res/layout/activity_main.xml"
     }
 ]
