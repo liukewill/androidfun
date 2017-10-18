@@ -9,11 +9,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/android_learning" />
             <option value="$PROJECT_DIR$/inject" />
             <option value="$PROJECT_DIR$/inject-api" />
             <option value="$PROJECT_DIR$/inject-compiler" />
-            <option value="$PROJECT_DIR$/lib" />
+            <option value="$PROJECT_DIR$/java_learing" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

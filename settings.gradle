@@ -1,2 +1,2 @@
-include ':app', ':lib', ':inject-compiler', ':inject', ':inject-api'
+include ':android_learning', ':java_learing', ':inject-compiler', ':inject', ':inject-api'
 
