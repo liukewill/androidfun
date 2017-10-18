@@ -11,9 +11,9 @@
     tools:context="com.example.think.androidfun.MainActivity">
     <TextView
         android:id="@+id/tv_1"
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"/>
+        />
 
     <LinearLayout
     android:layout_width="match_parent"

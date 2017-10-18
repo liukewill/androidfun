@@ -6,13 +6,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.example.think.androidfun.R;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -31,6 +35,26 @@ public class HookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hook);
         ButterKnife.bind(this);
+        ListView listView=null;
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
+        button.setOnClickListener(new View.OnClickListener() {
+
+            private int a;
+
+            @Override
+            public void onClick(View v) {
+
+            }
+
+            private void b(){
+                a=a*a;
+            }
+        });
 
     }
 
@@ -94,5 +118,9 @@ public class HookActivity extends AppCompatActivity {
         //代理Instrumentation
         HookInstrumentiationProxy instrumentiationProxy = new HookInstrumentiationProxy(mbaseIns);
         mBseField.set(currentActivityThread, instrumentiationProxy);
+
+
+
+
     }
 }

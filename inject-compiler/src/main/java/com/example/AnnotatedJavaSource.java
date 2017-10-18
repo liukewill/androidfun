@@ -56,6 +56,8 @@ public class AnnotatedJavaSource {
             field.getMredId());
         }
 
+        injectMethod.addStatement("System.out.println($N)","\"lk\"");
+
         //生成类
         TypeSpec injectClass =TypeSpec.classBuilder(mTypeElement.getSimpleName()+"$ViewInject")
                 .addModifiers(Modifier.PUBLIC)

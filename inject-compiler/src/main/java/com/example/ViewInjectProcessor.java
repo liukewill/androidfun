@@ -53,6 +53,7 @@ public class ViewInjectProcessor extends AbstractProcessor {
         try {
             processBindView(roundEnv);
 
+
             for (AnnotatedJavaSource annotatedJavaSource : sourceMap.values()) {
                 annotatedJavaSource.generateFile().writeTo(mFiler);
             }

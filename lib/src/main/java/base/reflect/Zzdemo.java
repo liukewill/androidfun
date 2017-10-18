@@ -25,7 +25,6 @@ public class Zzdemo<T>  {
     private Map< String,Integer> score;
 
     public static void main(String[] args) {
-
         genericClassParameterizedType();
     }
 

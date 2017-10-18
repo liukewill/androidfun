@@ -1,5 +1,9 @@
 package com.example.think.androidfun.butterkinfe;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,7 +42,8 @@ public class ButterKinfeActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                imageView.setImageDrawable(getDrawable(R.drawable.dog1));
+//                imageView.setImageDrawable(getDrawable(R.drawable.dog1));
+                restart();
             }
         });
         getAnnotationView();
@@ -84,5 +89,18 @@ public class ButterKinfeActivity extends AppCompatActivity {
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
+    }
+
+
+
+
+    private void restart(){
+        Intent mStartActivity = new Intent(this, ButterKinfeActivity.class);
+        int mPendingIntentId = 123456;
+        PendingIntent mPendingIntent = PendingIntent.getActivity(this, mPendingIntentId,    mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager mgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
+        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
+        System.exit(0);
+
     }
 }

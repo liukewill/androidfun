@@ -13,4 +13,5 @@ package com.example.think.androidfun.launchmode;
  */
 
 public class LaunchMode {
+
 }

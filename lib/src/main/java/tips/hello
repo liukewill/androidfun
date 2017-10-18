@@ -1,0 +1,10 @@
+1.Gradle DSL method not found: 'compile()'
+原因 同一行compile写了两个引用文件
+
+2.引用jar, source.jar只是源码,未编译,不可直接引用
+点开class文件,attach-to-source可选择源码,一般jar名称一样,android studio自动关联源码
+
+3.cglib 2.2 依赖asm.jar 需要使用cglib-nodep-2.2
+.NoSuchMethodError: org.objectweb.asm.ClassWriter
+因为cglib 包和asm包冲突 很烦
+

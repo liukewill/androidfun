@@ -3,6 +3,7 @@
     package="com.example.think.androidfun">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.aesean.lib.WAKE_BROADCAST" />
 
     <application
         android:name=".App"
@@ -12,14 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity android:name=".hookactivity.HookActivity" />
-        <activity android:name=".butterkinfe.ButterKinfeActivity">
+        <activity android:name=".butterkinfe.ButterKinfeActivity"></activity>
+        <activity android:name=".butterkinfe.Main2Activity" />
+        <activity android:name=".AppActivity">
+        </activity>
+        <activity android:name=".socket.SocketClientActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".butterkinfe.Main2Activity"></activity>
     </application>
 
 </manifest>

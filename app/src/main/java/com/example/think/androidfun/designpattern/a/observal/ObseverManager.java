@@ -1,4 +1,4 @@
-package com.example.think.androidfun.designpattern;
+package com.example.think.androidfun.designpattern.a.observal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ public class ObseverManager {
     private List<OnMessageChangeListner> list=new ArrayList<>();
 
     public interface OnMessageChangeListner{
-        public void onMessageChange(String s);
+         void onMessageChange(String s);
     }
 
     public void addListener(OnMessageChangeListner onMessageChangeListner){

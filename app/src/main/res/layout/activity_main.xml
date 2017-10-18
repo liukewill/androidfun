@@ -7,37 +7,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.think.androidfun.view.MainActivity">
-    <Button
-        android:id="@+id/ttt"
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
-
-    <com.example.think.androidfun.view.scrollconflict.VerticalScrollview
-        android:id="@+id/vs"
-        android:layout_below="@+id/ttt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/blue"/>
-            <android.support.v4.view.ViewPager
-                android:id="@+id/view_pager"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1000dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/blue"/>
-        </LinearLayout>
-    </com.example.think.androidfun.view.scrollconflict.VerticalScrollview>
+    tools:context="com.example.think.androidfun.viewpager.MainActivity">
 
 </RelativeLayout>
