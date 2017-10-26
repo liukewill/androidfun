@@ -31,9 +31,6 @@ android {
 }
 
 dependencies {
-    compile project(':inject')
-    compile project(':inject-api')
-    annotationProcessor project(':inject-compiler')
     //    compile 'com.squareup:javapoet:1.7.0'
     compile 'com.jakewharton:butterknife:7.0.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
