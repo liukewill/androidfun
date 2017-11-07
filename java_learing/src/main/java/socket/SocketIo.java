@@ -25,4 +25,5 @@ import io.socket.client.Socket;
 
 public class SocketIo {
     int a= 10_000;
+    int b= 10_000;
 }
