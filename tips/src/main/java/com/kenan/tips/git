@@ -1,0 +1,8 @@
+https://www.cnblogs.com/dongliu/p/5782329.html
+1.查看本地config email
+git config --global user.name "username"
+git config --global user.email “username@mail.com”
+
+2.github add email
+
+
