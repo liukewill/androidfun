@@ -1,8 +1,6 @@
-package com.baidu.lbs.services.socket;
+package netty;
 
 import android.util.Log;
-
-import com.baidu.lbs.commercialism.login.LoginManager;
 
 import org.jboss.netty.bootstrap.ClientBootstrap;
 import org.jboss.netty.buffer.ChannelBuffer;
@@ -16,8 +14,6 @@ import org.jboss.netty.channel.MessageEvent;
 import org.jboss.netty.channel.socket.nio.NioClientSocketChannelFactory;
 
 import java.net.InetSocketAddress;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -40,7 +36,7 @@ import java.util.concurrent.TimeUnit;
  * 5.
  */
 
-public class XLClient {
+public class NettyClient {
     public static final String TAG="NettyClient";
     public static final String HOST ="10.19.160.27";
     public static final int PORT =8060;

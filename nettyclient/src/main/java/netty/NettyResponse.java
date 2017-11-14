@@ -1,5 +1,6 @@
-package io.netty;
+package netty;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,7 +8,7 @@ import java.util.Map;
  * Created by kenan on 17/11/6.
  */
 
-public class XLResponse {
+public class NettyResponse implements Serializable{
     private byte encode;// 数据编码格式。已定义：0：UTF-8，1：GBK，2：GB2312，3：ISO8859-1
     private byte encrypt;// 加密类型。0表示不加密
     private byte extend1;// 用于扩展协议。暂未定义任何值
@@ -20,7 +21,7 @@ public class XLResponse {
 
     private String ip;
 
-    public void setValue(String key, String value){
+    public void setValue(String key,String value){
         values.put(key, value);
     }
 
@@ -105,7 +106,7 @@ public class XLResponse {
 
     @Override
     public String toString() {
-        return "XLResponse [encode=" + encode + ", encrypt=" + encrypt + ", extend1=" + extend1 + ", extend2=" + extend2
+        return "NettyResponse [encodePack=" + encode + ", encrypt=" + encrypt + ", extend1=" + extend1 + ", extend2=" + extend2
                 + ", sessionid=" + sessionid + ", result=" + result + ", length=" + length + ", values=" + values + ", ip=" + ip + "]";
     }
 

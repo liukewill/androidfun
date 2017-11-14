@@ -1,5 +1,6 @@
-package io.netty;
+package netty;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,7 +23,7 @@ import java.util.Map;
  */
 
 
-public class XLRequest {
+public class NettyRequest implements Serializable{
     private byte encode;// 数据编码格式。已定义：0：UTF-8，1：GBK，2：GB2312，3：ISO8859-1
     private byte encrypt;// 加密类型。0表示不加密
     private byte extend1;// 用于扩展协议。暂未定义任何值
@@ -95,7 +96,7 @@ public class XLRequest {
         return params;
     }
 
-    public void setValue(String key, String value){
+    public void setValue(String key,String value){
         params.put(key, value);
     }
 
@@ -120,7 +121,80 @@ public class XLRequest {
 
     @Override
     public String toString() {
-        return "XLRequest [encode=" + encode + ", encrypt=" + encrypt + ", extend1=" + extend1 + ", extend2=" + extend2
+        return "NettyRequest [encodePack=" + encode + ", encrypt=" + encrypt + ", extend1=" + extend1 + ", extend2=" + extend2
                 + ", sessionid=" + sessionid + ", command=" + command + ", length=" + length + ", params=" + params + ", ip=" + ip + "]";
+    }
+
+    public static class Builder{
+        private byte encode;// 数据编码格式。已定义：0：UTF-8，1：GBK，2：GB2312，3：ISO8859-1
+        private byte encrypt;// 加密类型。0表示不加密
+        private byte extend1;// 用于扩展协议。暂未定义任何值
+        private byte extend2;// 用于扩展协议。暂未定义任何值
+        private int sessionid;// 会话ID
+        private int command;// 命令
+        private int length;// 数据包长
+
+        private Map<String,String> params=new HashMap<String, String>(); //参数
+
+        private String ip;
+
+        public  NettyRequest build(){
+            NettyRequest nettyRequest=new NettyRequest();
+            nettyRequest.setEncode(this.encode);
+            nettyRequest.setEncrypt(this.encrypt);
+            nettyRequest.setExtend1(this.extend1);
+            nettyRequest.setExtend2(this.extend2);
+            nettyRequest.setSessionid(this.sessionid);
+            nettyRequest.setCommand(this.command);
+            nettyRequest.setLength(this.length);
+            nettyRequest.setParams(this.params);
+            nettyRequest.setIp(this.ip);
+            return nettyRequest;
+        }
+
+        public Builder setEncode(byte encode) {
+            this.encode = encode;
+            return  this;
+        }
+
+        public Builder setEncrypt(byte encrypt) {
+            this.encrypt = encrypt;
+            return  this;
+        }
+
+        public Builder setExtend1(byte extend1) {
+            this.extend1 = extend1;
+            return  this;
+        }
+
+        public Builder setExtend2(byte extend2) {
+            this.extend2 = extend2;
+            return  this;
+        }
+
+        public Builder setSessionid(int sessionid) {
+            this.sessionid = sessionid;
+            return  this;
+        }
+
+        public Builder setCommand(int command) {
+            this.command = command;
+            return  this;
+        }
+
+        public Builder setLength(int length) {
+            this.length = length;
+            return  this;
+        }
+
+        public Builder setParams(Map<String, String> params) {
+            this.params = params;
+            return  this;
+        }
+
+        public Builder setIp(String ip) {
+            this.ip = ip;
+            return  this;
+        }
     }
 }

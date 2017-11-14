@@ -1,4 +1,4 @@
-package io.netty;
+package netty;
 
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
@@ -12,13 +12,15 @@ import org.jboss.netty.handler.codec.frame.FrameDecoder;
 
  */
 
-public class XLClientDecoder extends FrameDecoder {
+public class NettyClientDecoder extends FrameDecoder {
     @Override
     protected Object decode(ChannelHandlerContext context, Channel channel, ChannelBuffer buffer) throws Exception {
         if (buffer.readableBytes()<16) {
             return null;
         }
         buffer.markReaderIndex();
+        byte[] bytes=buffer.array();
+
         byte encode=buffer.readByte();
         byte encrypt=buffer.readByte();
         byte extend1=buffer.readByte();
@@ -33,7 +35,7 @@ public class XLClientDecoder extends FrameDecoder {
         ChannelBuffer dataBuffer= ChannelBuffers.buffer(length);
         buffer.readBytes(dataBuffer, length);
 
-        XLResponse response=new XLResponse();
+        NettyResponse response=new NettyResponse();
         response.setEncode(encode);
         response.setEncrypt(encrypt);
         response.setExtend1(extend1);
@@ -41,8 +43,8 @@ public class XLClientDecoder extends FrameDecoder {
         response.setSessionid(sessionid);
         response.setResult(result);
         response.setLength(length);
-        response.setValues(XLProtocolUtil.decode(encode, dataBuffer));
-        response.setIp(XLProtocolUtil.getClientIp(channel));
+        response.setValues(NettyProtocolUtil.decodePack(encode, dataBuffer));
+        response.setIp(NettyProtocolUtil.getClientIp(channel));
         return response;
     }
 }
