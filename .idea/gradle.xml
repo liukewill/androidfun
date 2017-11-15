@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/inject-compiler" />
             <option value="$PROJECT_DIR$/java_learing" />
             <option value="$PROJECT_DIR$/nettyclient" />
+            <option value="$PROJECT_DIR$/okhttp_client" />
             <option value="$PROJECT_DIR$/tips" />
           </set>
         </option>
