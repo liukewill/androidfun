@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android_learning/android_learning.iml" filepath="$PROJECT_DIR$/android_learning/android_learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidfun.iml" filepath="$PROJECT_DIR$/androidfun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hotfix/hotfix.iml" filepath="$PROJECT_DIR$/hotfix/hotfix.iml" />
       <module fileurl="file://$PROJECT_DIR$/inject/inject.iml" filepath="$PROJECT_DIR$/inject/inject.iml" />
       <module fileurl="file://$PROJECT_DIR$/inject-api/inject-api.iml" filepath="$PROJECT_DIR$/inject-api/inject-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/inject-compiler/inject-compiler.iml" filepath="$PROJECT_DIR$/inject-compiler/inject-compiler.iml" />

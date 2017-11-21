@@ -1,4 +1,4 @@
-include ':android_learning', ':nettyclient', ':tips', ':okhttp_client',
+include ':android_learning', ':nettyclient', ':tips', ':okhttp_client', ':hotfix',
         ':java_learing',
         ':inject-compiler',
         ':inject',
