@@ -10,14 +10,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/android_learning" />
-            <option value="$PROJECT_DIR$/hotfix" />
-            <option value="$PROJECT_DIR$/inject" />
-            <option value="$PROJECT_DIR$/inject-api" />
-            <option value="$PROJECT_DIR$/inject-compiler" />
-            <option value="$PROJECT_DIR$/java_learing" />
-            <option value="$PROJECT_DIR$/nettyclient" />
-            <option value="$PROJECT_DIR$/okhttp_client" />
-            <option value="$PROJECT_DIR$/tips" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

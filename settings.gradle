@@ -1,6 +1,8 @@
-include ':android_learning', ':nettyclient', ':tips', ':okhttp_client', ':hotfix',
-        ':java_learing',
-        ':inject-compiler',
-        ':inject',
-        ':inject-api'
+include ':android_learning'
+//        ':nettyclient',
+//        ':tips',
+//        ':okhttp_client',
+//        ':hotfix',
+//        ':java_learing'
+
 

@@ -4,14 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android_learning/android_learning.iml" filepath="$PROJECT_DIR$/android_learning/android_learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidfun.iml" filepath="$PROJECT_DIR$/androidfun.iml" />
-      <module fileurl="file://$PROJECT_DIR$/hotfix/hotfix.iml" filepath="$PROJECT_DIR$/hotfix/hotfix.iml" />
-      <module fileurl="file://$PROJECT_DIR$/inject/inject.iml" filepath="$PROJECT_DIR$/inject/inject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/inject-api/inject-api.iml" filepath="$PROJECT_DIR$/inject-api/inject-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/inject-compiler/inject-compiler.iml" filepath="$PROJECT_DIR$/inject-compiler/inject-compiler.iml" />
-      <module fileurl="file://$PROJECT_DIR$/java_learing/java_learing.iml" filepath="$PROJECT_DIR$/java_learing/java_learing.iml" />
-      <module fileurl="file://$PROJECT_DIR$/nettyclient/nettyclient.iml" filepath="$PROJECT_DIR$/nettyclient/nettyclient.iml" />
-      <module fileurl="file://$PROJECT_DIR$/okhttp_client/okhttp_client.iml" filepath="$PROJECT_DIR$/okhttp_client/okhttp_client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tips/tips.iml" filepath="$PROJECT_DIR$/tips/tips.iml" />
     </modules>
   </component>
 </project>

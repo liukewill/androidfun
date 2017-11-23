@@ -26,79 +26,79 @@ import java.lang.reflect.Method;
 public class ButterKinfeActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.iv)
-    public ImageView imageView;
-
-    private int [] draws={R.drawable.dog2,R.drawable.dog1};
-
-    @GuidePages({R.drawable.dog2,R.drawable.dog1})
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_butter_kinfe);
-        ViewInject.inject(this);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                imageView.setImageDrawable(getDrawable(R.drawable.dog1));
-                restart();
-            }
-        });
-        getAnnotationView();
-        InjectManager.injectEvents(this);
-        getImageResource();
-    }
-    private void onClickEvnet(View view){
-        Toast.makeText(this,"eee",Toast.LENGTH_LONG).show();
-    }
-
-    /**
-     * 运行时，反射获取view 反射效率低
-     * butterknife实际为运行为编辑时执行
-     */
-    private void getAnnotationView() {//运行时 反射获取View
-        Field[] fields = this.getClass().getDeclaredFields();
-        for (Field field : fields) {
-            try {
-                field.setAccessible(true);
-                if (field.getAnnotations() != null) {
-                    if (field.isAnnotationPresent(GetVIew.class)) {
-                        GetVIew getview = field.getAnnotation(GetVIew.class);
-                        field.set(this, findViewById(getview.value()));
-                    }
-                }
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-
-        }
-    }
-
-    private void getImageResource(){
-        try {
-            Method  oncreate=this.getClass().getDeclaredMethod("onCreate",Bundle.class);
-            if(oncreate.getAnnotations()!=null){
-                if(oncreate.isAnnotationPresent(GuidePages.class)){
-                    GuidePages guide=oncreate.getAnnotation(GuidePages.class);
-                    int []res=guide.value();
-//                    imageView.setImageDrawable(getDrawable(res[0]));
-                }
-            }
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
-
-    private void restart(){
-        Intent mStartActivity = new Intent(this, ButterKinfeActivity.class);
-        int mPendingIntentId = 123456;
-        PendingIntent mPendingIntent = PendingIntent.getActivity(this, mPendingIntentId,    mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
-        AlarmManager mgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
-        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
-        System.exit(0);
-
-    }
+//    @BindView(R.id.iv)
+//    public ImageView imageView;
+//
+//    private int [] draws={R.drawable.dog2,R.drawable.dog1};
+//
+//    @GuidePages({R.drawable.dog2,R.drawable.dog1})
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_butter_kinfe);
+//        ViewInject.inject(this);
+//        imageView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                imageView.setImageDrawable(getDrawable(R.drawable.dog1));
+//                restart();
+//            }
+//        });
+//        getAnnotationView();
+//        InjectManager.injectEvents(this);
+//        getImageResource();
+//    }
+//    private void onClickEvnet(View view){
+//        Toast.makeText(this,"eee",Toast.LENGTH_LONG).show();
+//    }
+//
+//    /**
+//     * 运行时，反射获取view 反射效率低
+//     * butterknife实际为运行为编辑时执行
+//     */
+//    private void getAnnotationView() {//运行时 反射获取View
+//        Field[] fields = this.getClass().getDeclaredFields();
+//        for (Field field : fields) {
+//            try {
+//                field.setAccessible(true);
+//                if (field.getAnnotations() != null) {
+//                    if (field.isAnnotationPresent(GetVIew.class)) {
+//                        GetVIew getview = field.getAnnotation(GetVIew.class);
+//                        field.set(this, findViewById(getview.value()));
+//                    }
+//                }
+//            } catch (IllegalAccessException e) {
+//                e.printStackTrace();
+//            }
+//
+//        }
+//    }
+//
+//    private void getImageResource(){
+//        try {
+//            Method  oncreate=this.getClass().getDeclaredMethod("onCreate",Bundle.class);
+//            if(oncreate.getAnnotations()!=null){
+//                if(oncreate.isAnnotationPresent(GuidePages.class)){
+//                    GuidePages guide=oncreate.getAnnotation(GuidePages.class);
+//                    int []res=guide.value();
+////                    imageView.setImageDrawable(getDrawable(res[0]));
+//                }
+//            }
+//        } catch (NoSuchMethodException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//
+//
+//
+//    private void restart(){
+//        Intent mStartActivity = new Intent(this, ButterKinfeActivity.class);
+//        int mPendingIntentId = 123456;
+//        PendingIntent mPendingIntent = PendingIntent.getActivity(this, mPendingIntentId,    mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+//        AlarmManager mgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
+//        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
+//        System.exit(0);
+//
+//    }
 }
