@@ -10,9 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.BindView;
 import com.example.think.androidfun.R;
-import com.sina.inject_api.ViewInject;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
