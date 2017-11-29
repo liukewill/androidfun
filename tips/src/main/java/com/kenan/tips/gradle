@@ -1,0 +1,53 @@
+
+
+1.重复引用
+Error:Execution failed for task ':phone:transformClassesWithRobustForDebug'.
+> You have duplicate classes with the same name :
+ android.support.v4.util.MapCollections$ArrayIterator
+ please remove duplicate classes
+
+http://blog.csdn.net/repoem/article/details/71750865
+
+ 解决：1.搜索类来源
+      2.查找重复引用的jar
+      3.gradle dependencies phone:dependencies
+
+      4. - 添加exclude
+        修改compile添加exclude后解决
+
+        compile ("com.jakewharton:butterknife:8.5.1") {
+        exclude group : 'com.android.support'
+        }
+
+
+2.强制指定低版本force
+同一个group的库多个引用时，会自动取最版本最高的，
+即我们通过gradle dependencies查看后的标(*)或者 -> 后的版本。
+但是我们有时候需要覆盖使用为低版本，应用场景，
+使用React Native时想指定‘com.android.support:appcompat-v7:23.0.1’可以修改为
+
+3.查看pom关系
+    1.project .idea->libraries->butterknife_8_5_1.xml
+
+    <component name="libraryTable">
+      <library name="butterknife-8.5.1">
+        <CLASSES>
+          <root url="file://$PROJECT_DIR$/regClientDoc/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.5.1/res" />
+          <root url="jar://$PROJECT_DIR$/regClientDoc/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.5.1/jars/classes.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/8.5.1/16724f486072e3ab970fc47ccff6f9013061fa6/butterknife-8.5.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </component>
+
+    2.根据source文件上级目录找到
+    $USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/8.5.1/16724f486072e3ab970fc47ccff6f9013061fa6/butterknife-8.5.1-sources.jar!
+    在pom文件中找到依赖
+    <dependency>
+      <groupId>com.android.support</groupId>
+      <artifactId>support-compat</artifactId>
+      <version>25.1.0</version>
+      <scope>compile</scope>
+    </dependency>
