@@ -1,4 +1,5 @@
-include ':android_learning'
+include ':uilib'
+//include ':android_learning',
 //        ':nettyclient',
 //        ':tips',
 //        ':okhttp_client',
