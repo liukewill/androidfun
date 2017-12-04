@@ -1,0 +1,5 @@
+1.ButterKnife 插件
+ButterKnife Zeyent  生成注解代码
+RemoveButterKnife   去掉注解代码  生成findviewbyID
+组件化 不适合用ButterKnife 需要批量去掉
+两个插件配合使用方便
