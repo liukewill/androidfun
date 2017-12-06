@@ -4,6 +4,6 @@ include ':uilib'
 //        ':tips',
 //        ':okhttp_client',
 //        ':hotfix',
-//        ':java_learing'
+include ':java_learing'
 
 
