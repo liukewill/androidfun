@@ -3,3 +3,12 @@ ButterKnife Zeyent  生成注解代码
 RemoveButterKnife   去掉注解代码  生成findviewbyID
 组件化 不适合用ButterKnife 需要批量去掉
 两个插件配合使用方便
+
+2.
+1.导入as项目，先关闭网络
+2.修改gradle build tools 改成本地已有
+3.修改gradle 为本地gradle
+
+run
+
+
