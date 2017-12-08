@@ -1,0 +1,27 @@
+1.nexus
+
+1.解压nexus 到bin目录
+2.bin下   ./nexus start
+3.提示需要root
+  sudo su
+  sh-x.x  passwd root
+  输入新密码
+
+  再执行su命令
+
+4.打开 http://127.0.0.1:8081/nexus/#welcome
+
+5.login  admin admin123 登录不成功
+  修改sonatype-wrok/nexus/conf/security.xml
+  password  admin123
+  sha1 加密为 f865b53623b121fd34ee5426c792e5c33af8c227
+  <id>admin</id>
+   <firstName>Administrator</firstName>
+   <lastName>User</lastName>
+   <password>f865b53623b121fd34ee5426c792e5c33af8c227</password>
+   <status>active</status>
+   <email>changeme@yourcompany.com</email>
+
+6.登录
+
+
