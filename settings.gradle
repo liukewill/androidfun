@@ -1,4 +1,4 @@
-include ':uilib'
+include ':uilib', ':animation'
 //include ':android_learning',
 //        ':nettyclient',
 //        ':tips',
