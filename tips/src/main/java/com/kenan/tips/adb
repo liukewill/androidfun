@@ -32,3 +32,7 @@ sh dex2jar.sh classes.dex
 
 
  ifconfig | grep "inet " | grep -v 127.0.0.1
+
+Failed to install /Users/kenan/Desktop/phone-baidu_app-release.apk:
+Failure [INSTALL_FAILED_USER_RESTRICTED: Install canceled by user]
+开发者选项-USB应用安装
