@@ -26,3 +26,17 @@ Timer timer=new Timer();
                 inputMethodManager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
             }
         }, 1000); // 秒后自动弹出
+
+public static void showInput(final EditText etInput){
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+
+                           public void run() {
+                               InputMethodManager inputManager =
+                                       (InputMethodManager) etInput.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                               inputManager.showSoftInput(etInput, 0);
+                           }
+
+                       },
+                1000);// 1秒后自动弹出
+    }
