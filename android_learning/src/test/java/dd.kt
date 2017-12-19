@@ -17,6 +17,10 @@ class T{
     }
 
 
+    fun a(aa:G<Int>){
+
+    }
+
 
     class G<T>{
     }
