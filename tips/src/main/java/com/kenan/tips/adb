@@ -22,7 +22,7 @@ trace 日志
 ￼
 adb pull /data/anr/traces.txt  /Users/kenan/Desktop/xxxx
 
-修改host   (e  EDIT)   ( i   INSERT)       (：wq)
+修改host   (e  EDIT)   ( i   INSERT)       保存(：wq!)
  sudo vim /etc/hosts
 
 

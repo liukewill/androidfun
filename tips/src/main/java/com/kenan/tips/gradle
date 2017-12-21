@@ -10,7 +10,7 @@ http://blog.csdn.net/repoem/article/details/71750865
 
  解决：1.搜索类来源
       2.查找重复引用的jar
-      3.gradle dependencies phone:dependencies
+      3.gradle  phone:dependencies
 
       4. - 添加exclude
         修改compile添加exclude后解决
