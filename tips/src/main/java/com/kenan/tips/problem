@@ -1,0 +1,23 @@
+
+ButterKnife之坑
+
+1.butterknife 8.0以后 项目拆分为
+  主入口工程 butterkinfe
+  apt编译library  compile apt
+  annotation library  统一存放注解
+
+  使用时需要使用 在gradle  中添加  annotationprocessor
+  为android studio 适配的编译时处理器
+  在jekins上失效
+
+  项目中使用 7.0 jar包引用  无annotationprocessor
+
+
+2.butterkinfe 在library中使用 R2
+
+3.为了防止butterknife 踩坑，使用
+  butterkinfe 插件添加
+  removebutterkinfe  还原代码
+
+  removebutterkinfe 需要修改 method 为 onCreate 并且添加 setcontentview方法（代码硬编码导致）
+
