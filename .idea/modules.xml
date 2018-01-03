@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/androidfun.iml" filepath="$PROJECT_DIR$/androidfun.iml" />
       <module fileurl="file://$PROJECT_DIR$/animation/animation.iml" filepath="$PROJECT_DIR$/animation/animation.iml" />
       <module fileurl="file://$PROJECT_DIR$/java_learing/java_learing.iml" filepath="$PROJECT_DIR$/java_learing/java_learing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okretorfit/okretorfit.iml" filepath="$PROJECT_DIR$/okretorfit/okretorfit.iml" />
       <module fileurl="file://$PROJECT_DIR$/uilib/uilib.iml" filepath="$PROJECT_DIR$/uilib/uilib.iml" />
     </modules>
   </component>
