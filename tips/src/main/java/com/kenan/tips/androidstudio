@@ -9,6 +9,12 @@ RemoveButterKnife   去掉注解代码  生成findviewbyID
 2.修改gradle build tools 改成本地已有
 3.修改gradle 为本地gradle
 
-run
+
+3. aar 文件的xml 可修改，由于xml不编译，直接解释，所以源文件会
+被直接打到包内，as允许修改xml文件，本地git不记录文件变更。
+该操作风险点很高。  由于不知道修改了哪个，编译不报错，运行时才会错误。
+坑。。。。。。。。
+
+
 
 
