@@ -7,6 +7,6 @@ package base.extend;
 public class Parent {
 
     protected  void t(){
-
+        System.out.println("P=T");
     }
 }
