@@ -8,5 +8,6 @@ public class Parent {
 
     protected  void t(){
         System.out.println("P=T");
+        //test
     }
 }
