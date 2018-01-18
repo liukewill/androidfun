@@ -21,3 +21,22 @@ ButterKnife之坑
 
   removebutterkinfe 需要修改 method 为 onCreate 并且添加 setcontentview方法（代码硬编码导致）
 
+
+
+
+4.http://www.lxway.com/905420294.htm
+
+stackoverflow
+Caused by: android.view.InflateException: Binary XML file line #57: Error inflating class <unknown>
+01-09 09:36:41.229: E/AndroidRuntime(1975): at android.view.LayoutInflater.createView(LayoutInflater.java:518)
+01-09 09:36:41.229: E/AndroidRuntime(1975): at com.android.internal.policy.impl.PhoneLayoutInflater.onCreateView
+Caused by: java.lang.reflect.InvocationTargetException
+01-09 09:36:41.229: E/AndroidRuntime(1975): at java.lang.reflect.Constructor.constructNative(Native Method)
+01-09 09:36:41.229: E/AndroidRuntime(1975): at java.lang.reflect.Constructor.newInstance(Constructor.java:415)
+Caused by: java.lang.StackOverflowError
+01-09 09:36:41.229: E/AndroidRuntime(1975): at android.content.res.AssetManager.getResourceValue(AssetManager.java:201)
+
+
+查看错误,发现很多drawable的错误,逐个差看,发现定义了两个同名的图片资源A和B,A为xml文件,A文件中使用了B,将A和B改成名字不同的资源,问题解决
+
+分析问题:  栈溢出错误容易出现在递归程序中,因为每次调用其他函数都会不断的将调用函数的资源压栈,如果调用次数过多则可能超出栈的容量限制,而遇到的这个BUG,则是该drawable自身包含自身,使得xml解析生成View时:自身不断创建自身,直到栈溢出异常发生。
