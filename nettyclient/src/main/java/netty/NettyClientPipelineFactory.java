@@ -6,6 +6,7 @@ import org.jboss.netty.channel.Channels;
 
 /**
  * Created by kenan on 17/11/6.
+ * 需要扩展
  */
 
 public class NettyClientPipelineFactory implements ChannelPipelineFactory {
