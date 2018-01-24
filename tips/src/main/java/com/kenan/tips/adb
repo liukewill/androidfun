@@ -31,6 +31,14 @@ adb pull /data/anr/traces.txt  /Users/kenan/Desktop/xxxx
 将其复制到dex2jar-0.0.9.15目录下
 sh dex2jar.sh classes.dex
 
+注意
+在目录中修改.sh的权限
+chmod a+x *.sh
+否则直接执行会提示:
+d2j-dex2jar.sh: line 36: ./d2j_invoke.sh: Permission denied
+
+
+
 
  ifconfig | grep "inet " | grep -v 127.0.0.1
 
