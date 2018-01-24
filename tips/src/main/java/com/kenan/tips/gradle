@@ -6,6 +6,8 @@ Error:Execution failed for task ':phone:transformClassesWithRobustForDebug'.
  android.support.v4.util.MapCollections$ArrayIterator
  please remove duplicate classes
 
+
+
 http://blog.csdn.net/repoem/article/details/71750865
 
  解决：1.搜索类来源
