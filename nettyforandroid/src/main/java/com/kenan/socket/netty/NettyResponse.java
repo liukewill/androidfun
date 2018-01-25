@@ -1,4 +1,4 @@
-package netty;
+package com.kenan.socket.netty;
 
 import java.io.Serializable;
 import java.util.HashMap;

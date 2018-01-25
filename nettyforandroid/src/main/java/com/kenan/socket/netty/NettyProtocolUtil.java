@@ -1,4 +1,4 @@
-package netty;
+package com.kenan.socket.netty;
 
 
 import org.jboss.netty.buffer.ChannelBuffer;

@@ -1,8 +1,9 @@
-package netty;
+package com.kenan.socket.netty;
 
 import android.util.Log;
 
 import com.baidu.lbs.manager.NoticeManager;
+import com.kenan.socket.NettyClient;
 
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ChannelStateEvent;
@@ -43,13 +44,18 @@ public class NettyClientHandler extends SimpleChannelHandler {
 
         if(NettyRequestFactory.COMMOND.AUTH==response.getResult()){
             NettyRequestFactory.setTicket(response.getValue(NettyRequestFactory.CONSTANT.TICKET_KEY));
+            Log.i(NettyClient.TAG,"AUTH-RESPONSE");
+
         }
 
         if(NettyRequestFactory.COMMOND.HEART_BEAT==response.getResult()){
-
+            Log.i(NettyClient.TAG,"HB-RESPONSE");
         }
 
         if(NettyRequestFactory.COMMOND.NEW_ORDER==response.getResult()){
+            //新单逻辑  收到新单推送，反馈新单，走notice逻辑
+            Log.i(NettyClient.TAG,"NEW-ORDER-RESPONSE");
+            NettyClient.getInstance().sendNewOrderResponse();
             NoticeManager.getInstance().notice();
         }
     }
@@ -59,6 +65,8 @@ public class NettyClientHandler extends SimpleChannelHandler {
         notifyError(ctx,e);
         e.getCause().printStackTrace();
         ctx.getChannel().close();
+        Log.i(NettyClient.TAG,"channelClosed--exception"+e.toString());
+
     }
 
     @Override

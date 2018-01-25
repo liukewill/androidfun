@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/androidfun.iml" filepath="$PROJECT_DIR$/.idea/modules/androidfun.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/netty4android/netty4android.iml" filepath="$PROJECT_DIR$/.idea/modules/netty4android/netty4android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nettyclient/nettyclient.iml" filepath="$PROJECT_DIR$/.idea/modules/nettyclient/nettyclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/nettyforandroid/nettyforandroid.iml" filepath="$PROJECT_DIR$/.idea/modules/nettyforandroid/nettyforandroid.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nettylib/nettylib.iml" filepath="$PROJECT_DIR$/.idea/modules/nettylib/nettylib.iml" />
     </modules>
   </component>
 </project>

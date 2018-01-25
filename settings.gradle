@@ -1,6 +1,6 @@
 //include ':uilib', ':animation', ':okretorfit'
 //include ':android_learning',
-include ':nettyclient', ':nettylib', ':netty4android', ':nettyforandroid'
+include ':nettyforandroid'
 //        ':tips',
 //        ':okhttp_client',
 //        ':hotfix',

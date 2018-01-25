@@ -127,13 +127,13 @@ public class SocketClientActivity extends AppCompatActivity {
             while (true) {
                 Log.e("lk","connect-isClosed"+socket.isClosed());
                 if (!socket.isClosed()) {
-                    Log.e("lk","socket-connected:"+socket.isConnected());
+                    Log.e("lk","netty-connected:"+socket.isConnected());
                     if (socket.isConnected()) {
-                        Log.e("lk","socket-isInputShutdown:"+socket.isInputShutdown());
+                        Log.e("lk","netty-isInputShutdown:"+socket.isInputShutdown());
                         if (!socket.isInputShutdown()) {
                             Log.e("lk","in-readline:"+in.readLine());
                             if ((content = in.readLine()) != null) {
-                                Log.e("lk","socket-readline!=null:"+content);
+                                Log.e("lk","netty-readline!=null:"+content);
                                 content += "\n";
                                 mHandler.sendMessage(mHandler.obtainMessage());
                                 Log.e("lk","sendMessage");

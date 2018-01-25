@@ -1,6 +1,15 @@
-package netty;
+package com.kenan.socket;
 
 import android.util.Log;
+
+import com.baidu.lbs.commercialism.app.DuApp;
+import com.baidu.lbs.comwmlib.timer.TimerSchedule;
+import com.baidu.lbs.net.type.SwitchFromCloud;
+import com.kenan.socket.netty.NettyClientHandler;
+import com.kenan.socket.netty.NettyClientPipelineFactory;
+import com.kenan.socket.netty.NettyProtocolUtil;
+import com.kenan.socket.netty.NettyRequest;
+import com.kenan.socket.netty.NettyRequestFactory;
 
 import org.jboss.netty.bootstrap.ClientBootstrap;
 import org.jboss.netty.buffer.ChannelBuffer;
@@ -16,8 +25,6 @@ import org.jboss.netty.channel.socket.nio.NioClientSocketChannelFactory;
 import java.net.InetSocketAddress;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by kenan on 17/11/6.
@@ -38,29 +45,60 @@ import java.util.concurrent.TimeUnit;
 
 public class NettyClient {
     public static final String TAG="NettyClient";
-    public static final String HOST ="10.19.160.27";
-    public static final int PORT =8060;
-    public static final int HEART_BEAT_TIME=10;
+    public static final String HOST ="182.61.53.107";
+    public static final int PORT =8001;
+    public static long hear_beat_time =10*1000;
 
     private boolean isConnect = false;
     private ChannelFuture future;
     private Channel channel;
 
-    private  NioClientSocketChannelFactory clientSocketChannelFactory;
+    private  static NioClientSocketChannelFactory clientSocketChannelFactory;
     private  ClientBootstrap clientBootstrap;
-    private  ScheduledExecutorService mScheduledExecutorService;
     private  ExecutorService singleThreadExecutor=Executors.newSingleThreadExecutor();
+
+    private String ACTION_BROADCAST = "com.baidu.lbs.xinlingshou.netty";
+    private TimerSchedule mRingTimerSchedule;
+
     private static NettyClient nettyClient =new NettyClient();
 
     private NettyClient(){
-
+        mRingTimerSchedule = new TimerSchedule(DuApp.getAppContext(), ACTION_BROADCAST, mTimerScheduleCallback);
     }
 
     public static NettyClient getInstance(){
         return nettyClient;
     }
 
+    public void checkStatus(SwitchFromCloud.Switches switches){
+        try {
+            if (switches == null || switches.pconnect_switch == null) {
+                return;
+            }
+            boolean canopen = "1".equals(switches.pconnect_switch.open);
+            int heartBeatTime = Integer.parseInt(switches.pconnect_switch.period);
+            this.hear_beat_time = heartBeatTime*1000;
+
+            Log.i(TAG,"isConnect:"+isConnect()+"****isOpen:"+canopen);
+            if (isConnect()) {
+                if (!canopen) {
+                    this.close();
+                }
+            } else {
+                if (canopen) {
+                    this.start();
+                }
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public void start(){
+        Log.i(TAG,"run-"+ "***********start**********");
+
+
         Runnable runnable=new Runnable() {
             @Override
             public void run() {
@@ -72,66 +110,35 @@ public class NettyClient {
         singleThreadExecutor.execute(runnable);
     }
 
+    public void close(){
+        Log.i(TAG,"run-"+ "************close**********");
+        try {
+            shutdown(future);
+            stopHeartBeat();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     private  void startProcess(){
         try {
+            shutdown(future);
+            Thread.sleep(500);
             clientSocketChannelFactory=new NioClientSocketChannelFactory(Executors.newCachedThreadPool(),Executors.newCachedThreadPool());
             clientBootstrap=new ClientBootstrap(clientSocketChannelFactory);
 
             ChannelFuture future = connect();
             Log.i(TAG,"future state is "+future.isSuccess());
+
             channel=future.getChannel();
             if(future.isSuccess()){
                 sendAuth();
-                startHeartBeat();
             }
         }catch (Exception e){
             e.printStackTrace();
         }
     }
 
-    public void reconnect(){
-        try {
-
-            shutdown(future);
-            while(true){
-                if(!future.isSuccess()){
-                    break;
-                }
-            }
-            startProcess();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void shutdown(){
-        try {
-            mScheduledExecutorService.shutdown();
-            mScheduledExecutorService=null;
-            shutdown(future);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    private   void startHeartBeat(){
-//         自定义心跳，每隔20秒向服务器发送心跳包
-        if(isConnect()) {
-            if (mScheduledExecutorService == null) {
-                mScheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-            }
-
-            mScheduledExecutorService.scheduleAtFixedRate(new Runnable() {
-                @Override
-                public void run() {
-                    Log.i(TAG, "send-hb");
-                    sendHeartBeat();
-                }
-            }, HEART_BEAT_TIME, HEART_BEAT_TIME, TimeUnit.SECONDS);
-        }else{
-        }
-
-
-    }
     /**
      * 启动客户端
      * @return
@@ -209,35 +216,34 @@ public class NettyClient {
     }
 
     public boolean isConnect() {
-        if(channel==null){
-            return false;
-        }
-        return  channel.isConnected();
+//        if(channel==null){
+//            return false;
+//        }
+//        return  channel.isConnected();
+        return false;
     }
 
     public void setConnect(boolean connect) {
         isConnect = connect;
     }
 
+
+
     public void sendHeartBeat(){
-        if(!isConnect())
-            return;
 
-        NettyRequest nettyRequest=NettyRequestFactory.getHeartBeatRequest();
-        ChannelBuffer channelBuffer=NettyProtocolUtil.encodeRequest(NettyRequestFactory.ENCODE.UTF_8, nettyRequest);
-        Log.i(NettyClient.TAG,nettyRequest.toString());
-        sendMsgToServer(channelBuffer, new ChannelFutureListener() {
-            @Override
-            public void operationComplete(ChannelFuture channelFuture) throws Exception {
-                if(channelFuture.isSuccess()){
-                    Log.i(TAG,"HB-success"+channelFuture.getChannel().getRemoteAddress());
+            NettyRequest nettyRequest = NettyRequestFactory.getHeartBeatRequest();
+            ChannelBuffer channelBuffer = NettyProtocolUtil.encodeRequest(NettyRequestFactory.ENCODE.UTF_8, nettyRequest);
+            Log.i(NettyClient.TAG, nettyRequest.toString());
+            sendMsgToServer(channelBuffer, new ChannelFutureListener() {
+                @Override
+                public void operationComplete(ChannelFuture channelFuture) throws Exception {
+                    if (channelFuture.isSuccess()) {
 
-                }else{
-                    Log.i(TAG,"HB-fail"+channelFuture.getChannel().getRemoteAddress());
+                    } else {
 
+                    }
                 }
-            }
-        });
+            });
     }
 
     public void sendAuth(){
@@ -248,10 +254,23 @@ public class NettyClient {
             @Override
             public void operationComplete(ChannelFuture channelFuture) throws Exception {
                 if(channelFuture.isSuccess()){
-                    Log.i(TAG,"AUTH-success"+channelFuture.getChannel().getRemoteAddress());
+                    startHeartBeat();
+                }else{
+                }
+            }
+        });
+    }
+
+    public void sendNewOrderResponse(){
+        NettyRequest nettyRequest=NettyRequestFactory.getOrderRequest();
+        ChannelBuffer channelBuffer=NettyProtocolUtil.encodeRequest(NettyRequestFactory.ENCODE.UTF_8, nettyRequest);
+        Log.i(NettyClient.TAG,nettyRequest.toString());
+        sendMsgToServer(channelBuffer, new ChannelFutureListener() {
+            @Override
+            public void operationComplete(ChannelFuture channelFuture) throws Exception {
+                if(channelFuture.isSuccess()){
 
                 }else{
-                    Log.i(TAG,"AUTH-fail"+channelFuture.getChannel().getRemoteAddress());
                 }
             }
         });
@@ -261,22 +280,40 @@ public class NettyClient {
 
     private NettyClientHandler.NettyHandlerListener nettyHandlerListener=new NettyClientHandler.NettyHandlerListener() {
         @Override
-        public void onSuccess(ChannelHandlerContext ctx, MessageEvent e) {
-            Log.i(TAG,"success");
+        public void onSuccess(ChannelHandlerContext ctx, MessageEvent e)
+        {
         }
 
         @Override
         public void onError(ChannelHandlerContext ctx, ExceptionEvent e) {
-            Log.i(TAG,"error");
 
         }
 
         @Override
         public void onClosed(ChannelHandlerContext ctx, ChannelStateEvent e) {
-            Log.i(TAG,"closed");
             setConnect(false);
         }
     };
+
+
+    public void stopHeartBeat() {
+        mRingTimerSchedule.stop();
+    }
+
+    private void startHeartBeat() {
+        Log.i(TAG,"start--HB-TIMER---"+hear_beat_time);
+        mRingTimerSchedule.start(5*1000, hear_beat_time, hear_beat_time, hear_beat_time);
+    }
+
+    private TimerSchedule.TimerScheduleCallback mTimerScheduleCallback = new TimerSchedule.TimerScheduleCallback() {
+        @Override
+        public void doSchedule() {
+            Log.i(TAG,"send-HB------------------"+hear_beat_time);
+            sendHeartBeat();
+            sendNewOrderResponse();
+        }
+    };
+
 
 
 

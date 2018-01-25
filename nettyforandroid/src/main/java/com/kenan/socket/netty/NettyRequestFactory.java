@@ -1,4 +1,4 @@
-package netty;
+package com.kenan.socket.netty;
 
 import com.baidu.lbs.commercialism.app.DuApp;
 import com.baidu.lbs.commercialism.login.LoginManager;
@@ -42,6 +42,7 @@ public class NettyRequestFactory {
         byte HEART_BEAT=1;
         byte AUTH=2;
         byte NEW_ORDER=3;
+        byte NEW_ORDER_RESPONSE=4;
     }
 
     /**
@@ -108,7 +109,7 @@ public class NettyRequestFactory {
     }
 
     public static String getWid(){
-        return LoginManager.getInstance().getShopId();
+        return LoginManager.getInstance().getWid();
     }
 
     public static NettyRequest getHeartBeatRequest(){
@@ -144,6 +145,25 @@ public class NettyRequestFactory {
                 .setExtend2(EXTEND2.NONE)
                 .setSessionid(getSessionId())
                 .setCommand(COMMOND.AUTH)
+                .setLength(getLength(pack))
+                .setParams(pack)
+                .build();
+
+        return nettyRequest;
+    }
+
+    public static NettyRequest getOrderRequest(){
+        Map<String,String> pack=new HashMap<>();
+        pack.put(CONSTANT.HEART_BEAT_KEY, CONSTANT.HEART_BEAT_VALUE);
+        pack.put(CONSTANT.TICKET_KEY,getTicket());
+
+        NettyRequest nettyRequest=new NettyRequest.Builder()
+                .setEncode(ENCODE.UTF_8)
+                .setEncrypt(ENCRYPT.NO_ENCRYPT)
+                .setExtend1(EXTEND1.NONE)
+                .setExtend2(EXTEND2.NONE)
+                .setSessionid(getSessionId())
+                .setCommand(COMMOND.NEW_ORDER_RESPONSE)
                 .setLength(getLength(pack))
                 .setParams(pack)
                 .build();

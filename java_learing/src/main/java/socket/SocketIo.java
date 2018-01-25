@@ -6,7 +6,7 @@ import io.socket.client.Socket;
 
 /**
  * Created by kenan on 17/10/19.
- * socket io
+ * netty io
  * 1.心跳包
  * 2.授权验证
  * 3.业务逻辑
