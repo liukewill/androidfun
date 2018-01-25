@@ -9,10 +9,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/animation" />
-            <option value="$PROJECT_DIR$/java_learing" />
-            <option value="$PROJECT_DIR$/okretorfit" />
-            <option value="$PROJECT_DIR$/uilib" />
+            <option value="$PROJECT_DIR$/netty4android" />
+            <option value="$PROJECT_DIR$/nettyclient" />
+            <option value="$PROJECT_DIR$/nettyforandroid" />
+            <option value="$PROJECT_DIR$/nettylib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

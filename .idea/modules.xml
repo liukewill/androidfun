@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/androidfun.iml" filepath="$PROJECT_DIR$/androidfun.iml" />
-      <module fileurl="file://$PROJECT_DIR$/animation/animation.iml" filepath="$PROJECT_DIR$/animation/animation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/java_learing/java_learing.iml" filepath="$PROJECT_DIR$/java_learing/java_learing.iml" />
-      <module fileurl="file://$PROJECT_DIR$/okretorfit/okretorfit.iml" filepath="$PROJECT_DIR$/okretorfit/okretorfit.iml" />
-      <module fileurl="file://$PROJECT_DIR$/uilib/uilib.iml" filepath="$PROJECT_DIR$/uilib/uilib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/androidfun.iml" filepath="$PROJECT_DIR$/.idea/modules/androidfun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/netty4android/netty4android.iml" filepath="$PROJECT_DIR$/.idea/modules/netty4android/netty4android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nettyclient/nettyclient.iml" filepath="$PROJECT_DIR$/.idea/modules/nettyclient/nettyclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nettyforandroid/nettyforandroid.iml" filepath="$PROJECT_DIR$/.idea/modules/nettyforandroid/nettyforandroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nettylib/nettylib.iml" filepath="$PROJECT_DIR$/.idea/modules/nettylib/nettylib.iml" />
     </modules>
   </component>
 </project>

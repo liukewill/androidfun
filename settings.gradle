@@ -1,9 +1,9 @@
-include ':uilib', ':animation', ':okretorfit'
+//include ':uilib', ':animation', ':okretorfit'
 //include ':android_learning',
-//        ':nettyclient',
+include ':nettyclient', ':nettylib', ':netty4android', ':nettyforandroid'
 //        ':tips',
 //        ':okhttp_client',
 //        ':hotfix',
-include ':java_learing'
+//include ':java_learing'
 
 

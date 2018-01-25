@@ -18,5 +18,10 @@
         <processorPath useClasspath="true" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="netty4android" target="1.7" />
+      <module name="nettyclient" target="1.7" />
+      <module name="nettyforandroid" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
