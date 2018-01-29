@@ -1,4 +1,4 @@
-package com.kenan.socket.netty;
+package com.kenan.nettyforandroid.protocol;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -8,7 +8,7 @@ import java.util.Map;
  * Created by kenan on 17/11/6.
  */
 
-public class NettyResponse implements Serializable{
+public class NettyResponse implements Serializable {
     private byte encode;// 数据编码格式。已定义：0：UTF-8，1：GBK，2：GB2312，3：ISO8859-1
     private byte encrypt;// 加密类型。0表示不加密
     private byte extend1;// 用于扩展协议。暂未定义任何值
@@ -21,7 +21,7 @@ public class NettyResponse implements Serializable{
 
     private String ip;
 
-    public void setValue(String key,String value){
+    public void setValue(String key, String value){
         values.put(key, value);
     }
 

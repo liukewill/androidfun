@@ -1,4 +1,7 @@
-package com.kenan.socket.netty;
+package com.kenan.nettyforandroid.netty;
+
+import com.kenan.nettyforandroid.protocol.NettyProtocolUtil;
+import com.kenan.nettyforandroid.protocol.NettyResponse;
 
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBuffers;
@@ -8,8 +11,8 @@ import org.jboss.netty.handler.codec.frame.FrameDecoder;
 
 /**
  * Created by kenan on 17/11/6.
- * 客户端解码器
-
+ * NettyResponse解析器
+ * 可自定义，参照本解析器实现
  */
 
 public class NettyClientDecoder extends FrameDecoder {

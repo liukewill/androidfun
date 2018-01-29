@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/androidfun.iml" filepath="$PROJECT_DIR$/.idea/modules/androidfun.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nettyforandroid/nettyforandroid.iml" filepath="$PROJECT_DIR$/.idea/modules/nettyforandroid/nettyforandroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidfun.iml" filepath="$PROJECT_DIR$/androidfun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nettyforandroid/nettyforandroid.iml" filepath="$PROJECT_DIR$/nettyforandroid/nettyforandroid.iml" />
     </modules>
   </component>
 </project>

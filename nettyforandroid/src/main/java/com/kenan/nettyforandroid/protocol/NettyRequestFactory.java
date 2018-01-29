@@ -1,4 +1,6 @@
-package com.kenan.socket.netty;
+package com.kenan.nettyforandroid.protocol;
+
+import android.content.SharedPreferences;
 
 import com.baidu.lbs.commercialism.app.DuApp;
 import com.baidu.lbs.commercialism.login.LoginManager;
@@ -76,7 +78,7 @@ public class NettyRequestFactory {
     }
 
     public static int getTimestamp_10(){
-        long time=System.currentTimeMillis()/1000;
+        long time= System.currentTimeMillis()/1000;
         return  new Long(time).intValue();
     }
 
@@ -86,18 +88,18 @@ public class NettyRequestFactory {
     }
 
     public static String getTicket(){
-        return  SharedPrefManager.getString(CONSTANT.TICKET_KEY,"");
+        return  SharedPreferences.getString(CONSTANT.TICKET_KEY,"");
     }
 
     public static void setTicket(String ticket){
         SharedPrefManager.saveString(CONSTANT.TICKET_KEY,ticket);
     }
 
-    public static String  getCuid(){
+    public static String getCuid(){
         return CommonParam.getCUID(DuApp.getAppContext());
     }
 
-    public static String  getCode(){
+    public static String getCode(){
         String md5 = MD5Utils.getMD5String(getCuid() + getWid() + getTimestamp_10() + CONSTANT._757b);
         String sub="";
         try{

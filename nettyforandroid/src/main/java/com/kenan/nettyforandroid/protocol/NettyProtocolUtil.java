@@ -1,4 +1,4 @@
-package com.kenan.socket.netty;
+package com.kenan.nettyforandroid.protocol;
 
 
 import org.jboss.netty.buffer.ChannelBuffer;
@@ -30,7 +30,7 @@ public class NettyProtocolUtil {
     public static ChannelBuffer encodeRequest(int encode, NettyRequest value){
         ChannelBuffer totalBuffer=null;
         if(value!=null){
-            totalBuffer=ChannelBuffers.dynamicBuffer();
+            totalBuffer= ChannelBuffers.dynamicBuffer();
             totalBuffer.writeByte(value.getEncode());
             totalBuffer.writeByte(value.getEncrypt());
             totalBuffer.writeByte(value.getExtend1());
@@ -48,12 +48,12 @@ public class NettyProtocolUtil {
     public static ChannelBuffer encodePack(int encode, Map<String,String> values, ChannelBuffer totalBuffer){
         if (values!=null && values.size()>0) {
             int length=0,index=0;
-            ChannelBuffer [] channelBuffers=new ChannelBuffer[values.size()];
+            ChannelBuffer[] channelBuffers=new ChannelBuffer[values.size()];
             Charset charset= NettyCharSetFactory.getCharset(encode);
             for(Entry<String,String> entry:values.entrySet()){
                 String key=entry.getKey();
                 String value=entry.getValue();
-                ChannelBuffer buffer=ChannelBuffers.dynamicBuffer();
+                ChannelBuffer buffer= ChannelBuffers.dynamicBuffer();
                 buffer.writeInt(key.length());
                 buffer.writeBytes(key.getBytes(charset));
                 buffer.writeInt(value.length());
@@ -78,14 +78,14 @@ public class NettyProtocolUtil {
     public static ChannelBuffer encodePack(int encode, Map<String,String> values){
         ChannelBuffer totalBuffer=null;
         if (values!=null && values.size()>0) {
-            totalBuffer=ChannelBuffers.dynamicBuffer();
+            totalBuffer= ChannelBuffers.dynamicBuffer();
             int length=0,index=0;
-            ChannelBuffer [] channelBuffers=new ChannelBuffer[values.size()];
+            ChannelBuffer[] channelBuffers=new ChannelBuffer[values.size()];
             Charset charset= NettyCharSetFactory.getCharset(encode);
             for(Entry<String,String> entry:values.entrySet()){
                 String key=entry.getKey();
                 String value=entry.getValue();
-                ChannelBuffer buffer=ChannelBuffers.dynamicBuffer();
+                ChannelBuffer buffer= ChannelBuffers.dynamicBuffer();
                 buffer.writeInt(key.length());
                 buffer.writeBytes(key.getBytes(charset));
                 buffer.writeInt(value.length());
