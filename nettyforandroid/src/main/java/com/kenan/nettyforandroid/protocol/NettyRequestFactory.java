@@ -15,6 +15,8 @@ import java.util.Map;
 
 /**
  * Created by kenan on 17/11/9.
+ * 需要抽离出sdk内
+ * 外部自己定义
  */
 
 public class NettyRequestFactory {
