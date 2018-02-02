@@ -3,8 +3,6 @@ package com.kenan.nettyforandroid.netty;
 import android.util.Log;
 
 import com.kenan.nettyforandroid.NettyClient;
-import com.kenan.nettyforandroid.protocol.NettyRequestFactory;
-import com.kenan.nettyforandroid.protocol.NettyResponse;
 
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.ChannelStateEvent;
@@ -14,7 +12,6 @@ import org.jboss.netty.channel.SimpleChannelHandler;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
@@ -22,7 +19,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 
 public class NettyClientHandler extends SimpleChannelHandler {
-    private final AtomicInteger count=new AtomicInteger(0); //计数器
+
+
     private List<INettyHandler> listeners =new ArrayList<>();
 
     @Override
@@ -38,25 +36,25 @@ public class NettyClientHandler extends SimpleChannelHandler {
      * @throws Exception
      */
     public void processMethod(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
-        Log.i(NettyClient.TAG,e.getMessage().toString());
-
-        NettyResponse response=(NettyResponse)e.getMessage();
-
-
-        if(NettyRequestFactory.COMMOND.AUTH==response.getResult()){
-            NettyRequestFactory.setTicket(response.getValue(NettyRequestFactory.CONSTANT.TICKET_KEY));
-            Log.i(NettyClient.TAG,"AUTH-RESPONSE");
-        }
-
-        if(NettyRequestFactory.COMMOND.HEART_BEAT==response.getResult()){
-            Log.i(NettyClient.TAG,"HB-RESPONSE");
-        }
-
-        if(NettyRequestFactory.COMMOND.NEW_ORDER==response.getResult()){
-            //新单逻辑  收到新单推送，反馈新单，走notice逻辑
-            Log.i(NettyClient.TAG,"NEW-ORDER-RESPONSE");
-            NettyClient.getInstance().sendNewOrderResponse();
-        }
+//        Log.i(NettyClient.TAG,e.getMessage().toString());
+//
+//        NettyResponse response=(NettyResponse)e.getMessage();
+//
+//
+//        if(NettyRequestFactory.COMMOND.AUTH==response.getResult()){
+//            NettyRequestFactory.setTicket(response.getValue(NettyRequestFactory.CONSTANT.TICKET_KEY));
+//            Log.i(NettyClient.TAG,"AUTH-RESPONSE");
+//        }
+//
+//        if(NettyRequestFactory.COMMOND.HEART_BEAT==response.getResult()){
+//            Log.i(NettyClient.TAG,"HB-RESPONSE");
+//        }
+//
+//        if(NettyRequestFactory.COMMOND.NEW_ORDER==response.getResult()){
+//            新单逻辑  收到新单推送，反馈新单，走notice逻辑
+//            Log.i(NettyClient.TAG,"NEW-ORDER-RESPONSE");
+//            NettyClient.getInstance().sendNewOrderResponse();
+//        }
     }
 
     @Override

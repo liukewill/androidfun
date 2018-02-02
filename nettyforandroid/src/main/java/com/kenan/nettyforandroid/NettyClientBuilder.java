@@ -8,8 +8,8 @@ import android.content.Context;
 
 public class NettyClientBuilder {
 
-    public   String HOST ;
-    public   int PORT ;
+    public  String HOST ;
+    public  int PORT ;
     public  long hear_beat_time =10*1000;
     public  String ACTION_BROADCAST = "com.kenan.nettyforandroid.action";
     public Context context;

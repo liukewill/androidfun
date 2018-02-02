@@ -1,29 +1,29 @@
+/*
 package com.kenan.nettyforandroid.protocol;
 
 import android.content.SharedPreferences;
 
-import com.baidu.lbs.commercialism.app.DuApp;
-import com.baidu.lbs.commercialism.login.LoginManager;
-import com.baidu.lbs.manager.SharedPrefManager;
-import com.baidu.lbs.util.MD5Utils;
-import com.baidu.waimai.pass.util.CommonParam;
 
 import org.jboss.netty.buffer.ChannelBuffer;
 
 import java.util.HashMap;
 import java.util.Map;
 
+*/
 /**
  * Created by kenan on 17/11/9.
  * 需要抽离出sdk内
  * 外部自己定义
- */
+ *//*
+
 
 public class NettyRequestFactory {
 
-    /**
+    */
+/**
      * 编码类型
-     */
+     *//*
+
     public interface ENCODE{
         byte UTF_8=0;
         byte GBK=1;
@@ -31,17 +31,21 @@ public class NettyRequestFactory {
         byte ISO88591=3;
     }
 
-    /**
+    */
+/**
      * 加密类型
-     */
+     *//*
+
     public interface ENCRYPT{
         byte NO_ENCRYPT=0;
         byte ENCRYPT=1;
     }
 
-    /**
+    */
+/**
      * 命令
-     */
+     *//*
+
     public interface COMMOND{
         byte HEART_BEAT=1;
         byte AUTH=2;
@@ -49,16 +53,20 @@ public class NettyRequestFactory {
         byte NEW_ORDER_RESPONSE=4;
     }
 
-    /**
+    */
+/**
      * 扩展字段1
-     */
+     *//*
+
     public interface EXTEND1{
         byte NONE=0;
     }
 
-    /**
+    */
+/**
      * 扩展字段2
-     */
+     *//*
+
     public interface EXTEND2{
         byte NONE=0;
     }
@@ -175,3 +183,4 @@ public class NettyRequestFactory {
         return nettyRequest;
     }
 }
+*/

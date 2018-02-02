@@ -7,9 +7,6 @@ import com.kenan.nettyforandroid.netty.INettyHandler;
 import com.kenan.nettyforandroid.netty.INettySender;
 import com.kenan.nettyforandroid.netty.NettyClientDecoder;
 import com.kenan.nettyforandroid.netty.NettyClientPipelineFactory;
-import com.kenan.nettyforandroid.protocol.NettyProtocolUtil;
-import com.kenan.nettyforandroid.protocol.NettyRequest;
-import com.kenan.nettyforandroid.protocol.NettyRequestFactory;
 import com.kenan.nettyforandroid.timer.TimerSchedule;
 
 import org.jboss.netty.bootstrap.ClientBootstrap;
@@ -193,7 +190,7 @@ public class NettyClient implements INettySender,INettyHandler {
 
     /**
      * 动态控制开关，心跳时间
-     * 可用于外部动态检测长连接状态
+     * 可用于外部定时，动态 检测长连接状态
      * @param canopen 动态控制开关
      * @param hear_beat_time 动态控制
      */
@@ -223,11 +220,14 @@ public class NettyClient implements INettySender,INettyHandler {
      */
     private void startProcess() {
         try {
-            //重启前关闭连接
-            shutdown(future);
+            //重启前关闭强停前一个连接
+            if(future!=null) {
+                //关闭
+                shutdown(future);
 
-            //避免同步操作future导致异常case
-            Thread.sleep(500);
+                //避免同步操作future导致异常case
+                Thread.sleep(500);
+            }
 
             //channel 工厂
             clientSocketChannelFactory = new NioClientSocketChannelFactory(Executors.newCachedThreadPool(), Executors.newCachedThreadPool());
@@ -245,7 +245,7 @@ public class NettyClient implements INettySender,INettyHandler {
             //连接成功 发送验证
             if (future.isSuccess()) {
                 nettyHandler.onConnectSuccess();
-                iNettySender.sendAuth();
+                sendAuth();
             }else{
                 nettyHandler.onConnectFail();
             }
@@ -323,6 +323,16 @@ public class NettyClient implements INettySender,INettyHandler {
     }
 
 
+    /**
+     * 向服务器发送消息
+     * 1.验证
+     * 2.心跳
+     * 3.业务消息
+     * 都通过此方法发送
+     * @param channelBuffer
+     * @param listener
+     * @return
+     */
     public boolean sendMessage(ChannelBuffer channelBuffer, ChannelFutureListener listener) {
         boolean flag = channel != null && isConnect;
         if (flag)
@@ -342,52 +352,17 @@ public class NettyClient implements INettySender,INettyHandler {
     }
 
     public void sendHeartBeat() {
-
-        NettyRequest nettyRequest = NettyRequestFactory.getHeartBeatRequest();
-        ChannelBuffer channelBuffer = NettyProtocolUtil.encodeRequest(NettyRequestFactory.ENCODE.UTF_8, nettyRequest);
-        Log.i(NettyClient.TAG, nettyRequest.toString());
-        sendMessage(channelBuffer, new ChannelFutureListener() {
-            @Override
-            public void operationComplete(ChannelFuture channelFuture) throws Exception {
-                if (channelFuture.isSuccess()) {
-
-                } else {
-
-                }
-            }
-        });
+        if(iNettySender!=null) {
+           iNettySender.sendHeartBeat();
+        }
     }
 
     public void sendAuth() {
-        INettySender.
-        NettyRequest nettyRequest = NettyRequestFactory.getAuthRequest();
-        ChannelBuffer channelBuffer = NettyProtocolUtil.encodeRequest(NettyRequestFactory.ENCODE.UTF_8, nettyRequest);
-        Log.i(NettyClient.TAG, nettyRequest.toString());
-        sendMessage(channelBuffer, new ChannelFutureListener() {
-            @Override
-            public void operationComplete(ChannelFuture channelFuture) throws Exception {
-                if (channelFuture.isSuccess()) {
-                    startHeartBeat();
-                } else {
-                }
-            }
-        });
+        if(iNettySender!=null) {
+            iNettySender.sendAuth();
+        }
     }
 
-    public void sendNewOrderResponse() {
-        NettyRequest nettyRequest = NettyRequestFactory.getOrderRequest();
-        ChannelBuffer channelBuffer = NettyProtocolUtil.encodeRequest(NettyRequestFactory.ENCODE.UTF_8, nettyRequest);
-        Log.i(NettyClient.TAG, nettyRequest.toString());
-        sendMessage(channelBuffer, new ChannelFutureListener() {
-            @Override
-            public void operationComplete(ChannelFuture channelFuture) throws Exception {
-                if (channelFuture.isSuccess()) {
-
-                } else {
-                }
-            }
-        });
-    }
 
 
     public void stopHeartBeat() {
