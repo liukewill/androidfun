@@ -9,7 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/nettyforandroid" />
+            <option value="$PROJECT_DIR$/java_learing" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
