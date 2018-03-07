@@ -4,6 +4,6 @@
 //        ':tips',
 //        ':okhttp_client',
 //        ':hotfix',
-include ':java_learing'
+include ':java_learing', ':datastructure'
 
 
