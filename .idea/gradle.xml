@@ -9,8 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/datastructure" />
-            <option value="$PROJECT_DIR$/java_learing" />
+            <option value="$PROJECT_DIR$/android_learning" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

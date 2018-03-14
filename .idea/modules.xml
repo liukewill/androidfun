@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/androidfun.iml" filepath="$PROJECT_DIR$/.idea/modules/androidfun.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/datastructure/datastructure.iml" filepath="$PROJECT_DIR$/.idea/modules/datastructure/datastructure.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java_learing/java_learing.iml" filepath="$PROJECT_DIR$/.idea/modules/java_learing/java_learing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android_learning/android_learning.iml" filepath="$PROJECT_DIR$/android_learning/android_learning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidfun.iml" filepath="$PROJECT_DIR$/androidfun.iml" />
     </modules>
   </component>
 </project>
