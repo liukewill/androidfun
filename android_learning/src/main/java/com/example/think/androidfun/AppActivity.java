@@ -25,12 +25,7 @@ public class AppActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app);
         ButterKnife.bind(this);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendMessage();
-            }
-        });
+
     }
 
     private void sendBoradCastAlive(){
@@ -61,34 +56,8 @@ public class AppActivity extends AppCompatActivity {
 
     }
 
-    private void sendMessage(){
-        getWindow().getDecorView().post(new Runnable() {
-            @Override
-            public void run() {
-                Log.i("LKK","R1"+this.toString());
-            }
-        });
 
-        getWindow().getDecorView().post(new Runnable() {
-            @Override
-            public void run() {
-                Log.i("LKK","R2"+this.toString());
-            }
-        });
-    }
 
-    private void test(){
-        List<String> list=new ArrayList<>();
-        list.add("1");
 
-        List list1=new ArrayList<String>();
-
-        list1.add("2");
-        list1.add(2);
-
-        for (Object o : list1) {
-            System.out.println(o.toString());
-        }
-    }
 
 }

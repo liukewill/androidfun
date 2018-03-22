@@ -15,7 +15,7 @@
         <activity android:name=".hookactivity.HookActivity" />
         <activity android:name=".butterkinfe.ButterKinfeActivity" />
         <activity android:name=".butterkinfe.Main2Activity" />
-        <activity android:name=".AppActivity"></activity>
+        <activity android:name=".AppActivity" />
         <activity android:name=".socket.SocketClientActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".learn_activity.Main3Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TvActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
