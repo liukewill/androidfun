@@ -1,24 +1,26 @@
 package com.example.think.androidfun;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.InputType;
-import android.util.Log;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.think.androidfun.touchevent.RecyclerPlus;
+import com.example.think.androidfun.touchevent.ScrollPlus;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class AppActivity extends AppCompatActivity {
-    @Bind(R.id.btn)
-    Button btn;
+
+    @Bind(R.id.r1)
+    RecyclerPlus recyclerView;
+
+    @Bind(R.id.sc1)
+    ScrollPlus scrollPlus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,35 +28,44 @@ public class AppActivity extends AppCompatActivity {
         setContentView(R.layout.activity_app);
         ButterKnife.bind(this);
 
+
+        RedAdapter redAdapter=new RedAdapter();
+        LinearLayoutManager linearLayoutManage=new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManage);
+        recyclerView.setAdapter(redAdapter);
+
+        scrollPlus.setInnerView(recyclerView);
+
     }
 
-    private void sendBoradCastAlive(){
-        Intent intent=new Intent();
-        intent.setAction("com.aesean.lib.WAKE_BROADCAST");
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.setFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
-        this.sendBroadcast(intent);
-        Log.i("WAKE","SEND");
-    }
+    private static class RedAdapter extends RecyclerView.Adapter{
 
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.r1,parent,false);
+            return new RedViewHolder(view);
 
-    private void sendBroadCastNotAlive(){
-        Intent intent=new Intent();
-        Context c=null;
-        try {
-            c=createPackageContext("com.baidu.lbs.commercialism"
-            ,Context.CONTEXT_INCLUDE_CODE|CONTEXT_IGNORE_SECURITY);
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
         }
 
-        intent.setClassName(c,"com.baidu.lbs.WakeUpBroadcast");
-        intent.setAction("com.aesean.lib.WAKE_BROADCAST");
-//        intent.setFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
-        this.sendBroadcast(intent);
-        Log.i("WAKE","SEND");
+        @Override
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return 50;
+        }
+
+        public static class RedViewHolder extends RecyclerView.ViewHolder{
+
+            public RedViewHolder(View itemView) {
+                super(itemView);
+            }
+        }
 
     }
+
 
 
 
