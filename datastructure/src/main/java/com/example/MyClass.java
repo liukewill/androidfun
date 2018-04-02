@@ -1,17 +1,24 @@
 package com.example;
 
+
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.TreeSet;
 
 public class MyClass {
 
-    public static void main(String [] args){
-        byte a=24;
+    public static void main(String arg[]){
+        List list=new ArrayList();
+        list.add(null);
 
-        Object []ss={1,"b",3L};
-        ;
-        for (Object s : ss) {
-            System.out.println(s.hashCode());
-        }
-
+        TreeSet set=new TreeSet<>();
+        set.add(new String("22"));
+        set.add("22");
+        set.add("22");
+        set.add(new String("33"));
+        set.size();
     }
+
+
 }
