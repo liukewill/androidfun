@@ -32,6 +32,8 @@ import okhttp3.Call;
 
 public class BugUpgradeManager {
 
+    //liuke1
+
     private static BugUpgradeManager mInstance;
     public static final String PATCH_MD5_KEY="robust_patch_md5";
     public static String mFilePath = AppEnv.getBugfixDir() + AppEnv.FILE_NAME_PATCH;
