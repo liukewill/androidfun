@@ -32,7 +32,7 @@ import okhttp3.Call;
 
 public class BugUpgradeManager {
 
-    //liuke1
+    //liuke2
 
     private static BugUpgradeManager mInstance;
     public static final String PATCH_MD5_KEY="robust_patch_md5";
