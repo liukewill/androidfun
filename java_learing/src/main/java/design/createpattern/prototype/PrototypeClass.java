@@ -31,7 +31,7 @@ import java.io.Serializable;
  *
  * Serializable 序列化
  *
- *
+ * master test git rebase
  *
  */
 public class PrototypeClass implements Cloneable,Serializable {
