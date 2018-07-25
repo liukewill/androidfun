@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/androidfun.iml" filepath="$PROJECT_DIR$/.idea/androidfun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/androidfun.iml" filepath="$PROJECT_DIR$/.idea/modules/androidfun.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/datastructure/datastructure.iml" filepath="$PROJECT_DIR$/.idea/modules/datastructure/datastructure.iml" />
       <module fileurl="file://$PROJECT_DIR$/rx-learn/rx-learn.iml" filepath="$PROJECT_DIR$/rx-learn/rx-learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxjava/rxjava.iml" filepath="$PROJECT_DIR$/rxjava/rxjava.iml" />

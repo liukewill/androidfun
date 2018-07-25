@@ -31,7 +31,6 @@ import java.io.Serializable;
  *
  * Serializable 序列化
  *
- * hehe reset
  *
  *
  */
