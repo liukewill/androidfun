@@ -34,6 +34,8 @@ public class MainActivity extends Activity {
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
     Log.i(TAG, "onCreate:testReabse");
+    Log.i(TAG, "onCreate:testReabse2");
+
   }
 
   @OnClick(R.id.btn)
