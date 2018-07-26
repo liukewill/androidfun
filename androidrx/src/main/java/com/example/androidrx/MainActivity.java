@@ -2,6 +2,7 @@ package com.example.androidrx;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends Activity {
+  public static final String TAG = "TAG";
 
   @Bind(R.id.tv)
   TextView textView;
@@ -31,6 +33,7 @@ public class MainActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
+    Log.i(TAG, "onCreate:testReabse");
   }
 
   @OnClick(R.id.btn)
