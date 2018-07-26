@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
     Log.i(TAG, "onCreate:testReabse");
     Log.i(TAG, "onCreate:testReabse33333333333333");
     Log.i(TAG, "onCreate:testReabse2");
-
+    Log.i(TAG, "onCreate:testReabse33333333333333");
   }
 
   @OnClick(R.id.btn)
