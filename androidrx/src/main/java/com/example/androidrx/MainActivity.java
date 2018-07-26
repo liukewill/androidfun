@@ -35,6 +35,8 @@ public class MainActivity extends Activity {
     ButterKnife.bind(this);
     Log.i(TAG, "onCreate:testReabse");
     Log.i(TAG, "onCreate:testReabse33333333333333");
+    Log.i(TAG, "onCreate:testReabse2");
+
   }
 
   @OnClick(R.id.btn)
