@@ -14,6 +14,11 @@ import com.example.think.androidfun.touchevent.ScrollPlus;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * Add 1.0
+ *
+ * Add 2.0
+ */
 public class AppActivity extends AppCompatActivity {
 
     @Bind(R.id.r1)
