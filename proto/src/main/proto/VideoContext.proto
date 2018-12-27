@@ -1,0 +1,47 @@
+syntax = "proto3";
+package com.yxcorp.gifshow.core;
+option java_outer_classname = "VideoContext";
+
+message VideoInfo {
+    string theme = 1;
+    string cutRanges = 2;
+    string editorVersion = 3;
+    double record_start_cpu_utilization = 4;
+    double record_finish_cpu_utilization = 5;
+    double record_start_used_mem = 6;
+    double record_finish_used_mem = 7;
+    int32 record_start_battery_temperature = 8;
+    int32 record_finish_battery_temperature = 9;
+    int32 record_start_battery_level = 10;
+    int32 record_finish_battery_level = 11;
+    bool record_start_is_charing = 12;
+    bool record_finish_is_charing = 13;
+    string encode_type = 14;
+    string recorder_name = 15;
+    int32 hw_bitrate = 16;
+    double real_fps = 17;
+    string Author = 18;
+    string Meta = 19;
+    string Source = 20;
+    int64 Duration = 21;
+    int64 Time = 22;
+    string Camera = 23;
+    string Filter = 24;
+    float FilterValue = 25;
+    int32 Separate = 26;
+    string Import = 27;
+    int32 Photo = 28;
+    string FromPage = 29;
+    int64 CreateTime = 30;
+    int32 origin_width = 31;
+    int32 origin_height = 32;
+    int64 origin_length = 33;
+    string file_path = 34;
+    string Music = 35;
+    string OnlineMusic = 36;
+    string RecordMusic = 37;
+    int64 encode_config_id = 38;
+    int64 origin_duration = 39;
+    string beatsEnabled = 40;
+    int32 rotationDegree = 41;
+}

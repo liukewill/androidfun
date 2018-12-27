@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AES/AES.iml" filepath="$PROJECT_DIR$/AES/AES.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/androidfun.iml" filepath="$PROJECT_DIR$/.idea/androidfun.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/androidfun.iml" filepath="$PROJECT_DIR$/.idea/modules/androidfun.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidrx/androidrx.iml" filepath="$PROJECT_DIR$/androidrx/androidrx.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/datastructure/datastructure.iml" filepath="$PROJECT_DIR$/.idea/modules/datastructure/datastructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proto/proto.iml" filepath="$PROJECT_DIR$/proto/proto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/protonano/protonano.iml" filepath="$PROJECT_DIR$/protonano/protonano.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rx/rx.iml" filepath="$PROJECT_DIR$/rx/rx.iml" />
       <module fileurl="file://$PROJECT_DIR$/rx-learn/rx-learn.iml" filepath="$PROJECT_DIR$/rx-learn/rx-learn.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxjava/rxjava.iml" filepath="$PROJECT_DIR$/rxjava/rxjava.iml" />
     </modules>

@@ -6,9 +6,12 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.androidrx.aes.AESUtil;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import dalvik.system.DexClassLoader;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -18,6 +21,8 @@ import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
+
+import static com.example.androidrx.aes.AESUtil.R_NAME;
 
 public class MainActivity extends Activity {
   public static final String TAG = "TAG";
@@ -33,16 +38,19 @@ public class MainActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
-    Log.i(TAG, "onCreate:testReabse");
-    Log.i(TAG, "onCreate:testReabse33333333333333");
-    Log.i(TAG, "onCreate:testReabse2");
-    Log.i(TAG, "onCreate:testReabse33333333333333");
   }
 
   @OnClick(R.id.btn)
   void click(){
-    initZip();
+    testAES();
   }
+
+  void testAES(){
+    final String clsName = AESUtil.decrypt("466766766676597E15856FC9", "");
+    textView.setText(clsName);
+  }
+
+
 
 
   /**
@@ -120,18 +128,22 @@ public class MainActivity extends Activity {
     return Observable.create(new ObservableOnSubscribe<String>() {
       @Override
       public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-        Thread.sleep(1000);
-        emitter.onNext("A");
-        Thread.sleep(5000);
-        emitter.onNext("B");
-        Thread.sleep(1000);
-        emitter.onNext("C");
-        emitter.onNext("D");
-        emitter.onNext("E");
-        emitter.onNext("F");
+        doOb(emitter);
 
       }
     });
+  }
+
+  private void doOb(ObservableEmitter<String> emitter) throws InterruptedException {
+    Thread.sleep(1000);
+    emitter.onNext("A");
+    Thread.sleep(5000);
+    emitter.onNext("B");
+    Thread.sleep(1000);
+    emitter.onNext("C");
+    emitter.onNext("D");
+    emitter.onNext("E");
+    emitter.onNext("F");
   }
 
   private Observable<Integer> getObStr(){
@@ -144,6 +156,8 @@ public class MainActivity extends Activity {
         emitter.onNext(2);
         Thread.sleep(100);
         emitter.onNext(3);
+
+        emitter.onComplete();
       }
     });
   }

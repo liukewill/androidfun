@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile "io.reactivex.rxjava2:rxjava:2.1.16"
+}
+
+task lktest {
+    doLast{
+        println 'Hello'
+    }
+}
+sourceCompatibility = "7"
+targetCompatibility = "7"
