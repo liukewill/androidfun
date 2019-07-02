@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+  <!--渐变色环形进度-->
+  <declare-styleable name="GradientRoundProgress">
+    <!--圆环颜色-->
+    <attr name="grp_roundColor" format="color" />
+    <!--圆环的宽度-->
+    <attr name="grp_roundWidth" format="dimension" />
+    <!--圆环上的进度颜色-->
+    <attr name="grp_progressColor" format="color" />
+    <!--圆环上的进度宽度-->
+    <attr name="grp_progressWidth" format="dimension" />
+    <!--文字内容-->
+    <attr name="grp_text" format="string" />
+    <!--文字指示颜色-->
+    <attr name="grp_textColor" format="color" />
+    <!--文字指示字体大小-->
+    <attr name="grp_textSize" format="dimension" />
+    <!--数字指示字体大小-->
+    <attr name="grp_numSize" format="dimension" />
+    <!--进度值的最大值，一般为100-->
+    <attr name="grp_max" format="integer" />
+    <!--是否显示文字指示内容-->
+    <attr name="grp_textShow" format="boolean" />
+    <!--开始角度，指定进度初始点的绘制位置-->
+    <attr name="grp_startAngle" format="integer" />
+    <attr name="grp_progress_color0" format="color" />
+    <attr name="grp_progress_color1" format="color" />
+    <attr name="grp_progress_color2" format="color" />
+    <attr name="grp_progress_color3" format="color" />
+  </declare-styleable>
+
+  <declare-styleable name="RoundAngleImageView">
+    <attr name="radius" format="dimension" />
+    <attr name="left_top_radius" format="dimension" />
+    <attr name="right_top_radius" format="dimension" />
+    <attr name="right_bottom_radius" format="dimension" />
+    <attr name="left_bottom_radius" format="dimension" />
+  </declare-styleable>
+
+  <declare-styleable name="RectProgressView">
+    <attr name="back_ground_progress_color" format="color" />
+    <attr name="progress_color0" format="color" />
+    <attr name="progress_color1" format="color" />
+    <attr name="progress_color2" format="color" />
+    <attr name="progress_color3" format="color" />
+    <!-- 边框宽度 -->
+    <attr name="outlineWidth" format="dimension" />
+  </declare-styleable>
+
+  <declare-styleable name="RoundProgressView">
+    <!--圆环颜色-->
+    <attr name="rpv_roundColor" format="color" />
+    <!--圆环的宽度-->
+    <attr name="rpv_roundWidth" format="dimension" />
+    <!--圆环上的进度颜色-->
+    <attr name="rpv_progressColor" format="color" />
+    <!--圆环上的进度宽度-->
+    <attr name="rpv_progressWidth" format="dimension" />
+    <!--进度值的最大值，一般为100-->
+    <attr name="rpv_max" format="integer" />
+    <!--开始角度，指定进度初始点的绘制位置-->
+    <attr name="rpv_startAngle" format="integer" />
+  </declare-styleable>
+
+  <declare-styleable name="GifImageView">
+    <!--播放次放，默认永远播放-->
+    <attr name="play_count" format="integer" />
+    <!--播放完成后是否停留在最后一帧，默认false-->
+    <attr name="end_last_frame" format="boolean" />
+  </declare-styleable>
+  
+  <declare-styleable name="CommonToolbar">
+    <attr name="android:layout_height"/>
+  </declare-styleable>
+
+  <declare-styleable name="RoundRectConstraintLayout">
+    <attr name="round_radius" format="dimension" />
+  </declare-styleable>
+
+  <declare-styleable name="ReadMoreTextView">
+    <attr name="trimExpandedText" format="string" />
+    <attr name="trimCollapsedText" format="string" />
+    <attr name="trimLength" format="integer" />
+    <attr name="showTrimExpandedText" format="boolean" />
+    <attr name="colorClickableText" format="color" />
+    <attr name="trimLines" format="integer" />
+    <attr name="trimMode">
+      <enum name="trimModeLine" value="0"/>
+      <enum name="trimModeLength" value="1"/>
+    </attr>
+  </declare-styleable>
+</resources>
